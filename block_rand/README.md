@@ -4,6 +4,8 @@ This repository (or subdirectory of a repository) contains the source for the st
 
 An [html preview is here](https://htmlpreview.github.io/?https://github.com/egap/standards_discussions/blob/jake_block_rand/block_rand/block_rand.html)
 
+The pdf version can be downloaded directly.
+
 ## Provisional Precis:
 
 Estimating the average treatment  effect in block-randomized trials requires the  use of weights. One set of weights produces  an  unbiased  estimator of the ATE  but another set  is more precise. And the extent  to  which the biased estimator  is  more  precise depends  on  the design and  data.
