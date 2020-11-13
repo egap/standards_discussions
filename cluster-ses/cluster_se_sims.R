@@ -1,7 +1,7 @@
+## What if we had 7 days and we randomly assigned 1 to treatment.
 
-# remotes::install_github("declaredesign/DeclareDesign")
 library(DeclareDesign)
-# library(DesignLibrary)
+library(DesignLibrary)
 library(dplyr)
 library(clubSandwich)
 library(ICC)
@@ -9,10 +9,22 @@ library(coin)
 library(future)
 library(future.apply)
 
+d1 <- block_cluster_two_arm_designer(N_blocks = 1,
+    N_clusters_in_block = 7,
+    N_i_in_cluster = 10,
+    sd_block = 0,
+    sd_cluster = .1,
+    ate = .25)
 
+plan(multicore)
+d1_sims <- simulate_design(d1,sims=c(1,1,10,1,1,1))
+plan(sequential)
 
+d1_sims %>% group_by(estimator_label) %>% summarize(pow=mean(p.value < .05),
+    coverage = mean(estimand <= conf.high & estimand >= conf.low),.groups="dro  p")
+
+save(d1_sims, file="d1_sims.rda")
 ### This builds on https://declaredesign.org/blog/2018-10-16-few-clusters.html
-## What if we randomly assigned by day
 num_clus <- 7
 ## Using 1000 instead of 100,000 for speed.
 num_people_clus <- 10000
@@ -63,6 +75,7 @@ cluster_two_arm_design <- thepop +   assignment_m1 + potential_outcomes +   esti
 dat1 <- draw_data(cluster_two_arm_design)
 with(dat1,table(Z,clusters))
 ICCbare(y=Y,x=clusters,data=dat1)
+
 ptm <- proc.time()
 plan(multicore)
 sims <- simulate_design(cluster_two_arm_design,sims=100)
