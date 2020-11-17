@@ -40,5 +40,4 @@ save(d2_sims, file="d2_sims.rda")
 ## Try analytic approach for power.
 
 library(clusterPower)
-
 crtpwr.2mean(alpha=.05,m = 2, n = 100000, d = .25 , icc= .08, varw=1, cv = 0, power=NA)
