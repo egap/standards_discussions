@@ -2,7 +2,7 @@
 library(here)
 source(here::here("new_sims.R"))
 
-plan(multicore)
+plan(multicore, workers=12)
 set.seed(12345)
 simvec <- c(1, 1000, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 stopifnot(length(simvec) == length(designs[[1]]))
