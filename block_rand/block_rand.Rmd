@@ -8,7 +8,7 @@ output:
     theme: journal
   bookdown::pdf_document2:
     keep_tex: true
-bibliography: ../Research-Group-Bibliography/big.bib
+bibliography: block_rand.bib
 ---
 
 
@@ -51,13 +51,13 @@ overrepresent what happened in the small block, right? You have a lot more
 information about the treatment effect in the bigger block and so that
 information should play a bigger role in the overall story of the experiment."
 
-"We should," says the first experiment a bit grumpily, "after all lots of previous literature tells us that this block-size weighted estimator that is unbiased. For example, we have been reading @gerber2012field and [The trouble with 'controlling for' blocks](https://declaredesign.org/blog/biased-fixed-effects.html) which make exactly this argument."
+"We should," says the first experiment a bit grumpily, "after all lots of previous literature tells us that this block-size weighted estimator that is unbiased. For example, we have been reading @gerber2012field (Chapter 3) and [The trouble with 'controlling for' blocks](https://declaredesign.org/blog/biased-fixed-effects.html) which make exactly this argument."
 
 "By the way, what are you doing with the scales this morning? Usually you just start making our regular drink orders." The second experiment is also looking at the scales, bowls, and beans.
 
 "Oh. Well, these are new beans. I know that a good espresso depends on striking a balance between bitter and sour. And, in general, and with the beans I'm used to getting, I know that about 17 grams of beans ground at about level 2 and extracted at 9 psi for about 24 seconds makes a good double shot using this grinder and this machine and humidity more or less like this in the shop. But, since these are new beans I have to explore the values of these variables a bit before deciding about the right balance. I'll be back to pulling shots quickly tomorrow. Today, however, I need to make some coffees that I may not use, to learn how to make good coffee with these beans. Just a sec, it will be noisy while I grind this." With the newly ground beans the barista puts a scale under an cup, zeros out the weight, starts a timer, and starts the espresso machine. "So, back to field experiments, why don't you just use the idea that blocks with more information should contribute more to the estimate and get back to enjoying your day?"
 
-"Well, that is kind of the problem," says the second experiment a bit wearily, as if rehashing an old argument, "it is very expensive to do policy-relevant field experiments --- so we would often be happy to trade a little bit of bias for increases in precision, and we know that a different form of weighting is optimal from that perspective, see @kalton1968, or even the derivations for the optimal weight to diminish the size of the variance of a weighted average on wikipedia, or the related derivations in @hansen2008cbs."
+"Well, that is kind of the problem," says the second experiment a bit wearily, as if rehashing an old argument, "it is very expensive to do policy-relevant field experiments --- so we would often be happy to trade a little bit of bias for increases in precision, and we know that a different form of weighting is optimal from that perspective, see @kalton1968, page 199 of @gerber2012field or even the derivations for the optimal weight to diminish the size of the variance of a weighted average on wikipedia, or the related derivations in @hansen2008cbs."
 
 "Just go ahead and explain the intuition behind the precision-weighting approach", third experiment gestures to the barista, "Meanwhile, I'm happy to help you test free espresso shots while you figure out your own procedure."
 
@@ -71,19 +71,7 @@ The barista strokes his moustache while the sound of grinding coffee drowns out 
 
 "The problem is that we have two rules of thumb to follow given our designs where we have a few large blocks. Some people say that we should 'use fixed effects' (we know that this is the same as saying that we should use precision-weights) and other people say that we should use block-size weights." complains the third experiment.
 
-"I see," the barista pulls the first shot and the sound of foaming milk fills
-the air, "When I was first learning to make espresso and cappuccino, I found a
-lot of advice on the internet. But, that advice didn't work all the time, in
-all situations. I really liked the advice from the chemists --- and it gave me
-good starting places, for example, but nice graphs of acidity by particle size
-don't really tell me what to do in detail with one particle size and one kind
-of beans. I have to make my own decision about this, knowing that I do not have
-an ultra clean lab and fancy equipment. So, I've found I sometimes need to play
-around, try different approaches to see what works. I only do this when I get
-new beans, or a new grinder, or something else changes, of course. It would be
-waste of time and money to have to throw away a lot of espresso every morning."
-The barista pats the gigantic espresso machine with some affection. "Can you do
-something like this? Try each approach?"
+"I see," the barista pulls the first shot and the sound of foaming milk fills the air, "When I was first learning to make espresso and cappuccino, I found a lot of advice on the internet. But, that advice didn't work all the time, in all situations. I really liked the advice from the chemists --- and it gave me good starting places, for example, but nice graphs of acidity by particle size don't really tell me what to do in detail with one particle size and one kind of beans. I have to make my own decision about this, knowing that I do not have an ultra clean lab and fancy equipment. So, I've found I sometimes need to play around, try different approaches to see what works. I only do this when I get new beans, or a new grinder, or something else changes, of course. It would be waste of time and money to have to throw away a lot of espresso every morning." The barista pats the gigantic espresso machine with some affection. "Can you do something like this? Try each approach?"
 
 "Hey. This third espresso is better than the first, by the way." The fourth experiment drums fingers on the bar and taps toes on the brass footrest of the bar stool and addresses the other experiments, "Good idea! We have the [DeclareDesign](https://declaredesign.org/) package that we can use. Why don't we compare the two approaches?" The other experiments nod. "We'll take our cappucinos at the table while we work, if you don't mind. Sorry to step away from helping your coffee research."
 
