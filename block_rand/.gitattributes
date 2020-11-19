@@ -1,0 +1,9 @@
+FALSE[[:space:]]res_tmp.rda1[[:space:]]res_tmp.rda filter=lfs diff=lfs merge=lfs -text
+FALSE[[:space:]]res_tmp.rda2[[:space:]]res_tmp.rda filter=lfs diff=lfs merge=lfs -text
+TRUE[[:space:]]res_tmp.rda3[[:space:]]res_tmp.rda filter=lfs diff=lfs merge=lfs -text
+reslst.rda filter=lfs diff=lfs merge=lfs -text
+FALSE[[:space:]]res_tmp.rda3[[:space:]]res_tmp.rda filter=lfs diff=lfs merge=lfs -text
+TRUE[[:space:]]res_tmp.rda1[[:space:]]res_tmp.rda filter=lfs diff=lfs merge=lfs -text
+TRUE[[:space:]]res_tmp.rda2[[:space:]]res_tmp.rda filter=lfs diff=lfs merge=lfs -text
+dd_parms.rda filter=lfs diff=lfs merge=lfs -text
+dd_sims.rda filter=lfs diff=lfs merge=lfs -text
