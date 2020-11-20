@@ -12,7 +12,7 @@ library(optimr)
 
 source(here::here("utilityfns.R"))
 
-fn1a <- function(x, consteffects = TRUE, optwhat = "bestfe",reps=1) {
+fn1a <- function(x, consteffects = TRUE, optwhat = "bestfe", reps = 1) {
   if (any(x[1:3] >= 1) || any(x[1:3] <= 0) || any(x[1:3] < .05) || any(x[1:3] > .95) || any(x[4:6] < 0) || any(x[4:6] > 4)) {
     res <- 9999999
     return(res)
@@ -27,7 +27,7 @@ fn1a <- function(x, consteffects = TRUE, optwhat = "bestfe",reps=1) {
     res <- 9999999
     return(res)
   }
-  des <- design_to_summary(B = 3, n_b = n_b, p_b = p_b, tau_b = tau_b, const_effects_by_block = consteffects,reps=reps)
+  des <- design_to_summary(B = 3, n_b = n_b, p_b = p_b, tau_b = tau_b, const_effects_by_block = consteffects, reps = reps)
   ## Maybe and probably shuffle Z and recalc the summary a couple of times.
   if (optwhat == "bestfe") {
     return(des$mse_fe1 - des$mse_swt)
@@ -46,9 +46,9 @@ fn1a <- function(x, consteffects = TRUE, optwhat = "bestfe",reps=1) {
 # fn1(c(.05, .2, .9, 4, 2, 0), consteffects = FALSE)
 fn1a(c(.05, .2, .9, 4, 2, 0, 100, 100, 100), consteffects = TRUE)
 fn1a(c(.05, .2, .9, 4, 2, 0, 100, 100, 100), consteffects = FALSE)
-fn1a(c(.05, .2, .9, 4, 2, 0, 100.1, 100.2, 100.3), consteffects = FALSE,optwhat="bestfe",reps=1)
-fn1a(c(.05, .2, .9, 4, 2, 0, 100.1, 100.2, 100.3), consteffects = FALSE,optwhat="bestfe",reps=10)
-fn1a(c(.05, .2, .9, 4, 2, 0, 100.1, 100.2, 100.3), consteffects = FALSE,optwhat="bestfe",reps=10)
+fn1a(c(.05, .2, .9, 4, 2, 0, 100.1, 100.2, 100.3), consteffects = FALSE, optwhat = "bestfe", reps = 1)
+fn1a(c(.05, .2, .9, 4, 2, 0, 100.1, 100.2, 100.3), consteffects = FALSE, optwhat = "bestfe", reps = 10)
+fn1a(c(.05, .2, .9, 4, 2, 0, 100.1, 100.2, 100.3), consteffects = FALSE, optwhat = "bestfe", reps = 10)
 
 opts_fn_a <- function(fn, consteffects, optwhat) {
   ## The idea here is to do two wide stochastic searches and then use better optimizers
@@ -57,19 +57,27 @@ opts_fn_a <- function(fn, consteffects, optwhat) {
   optmethods <- c("Rcgmin", "Rvmmin", "hjn")
   ## Start with a design and data scenario that is best for block-size weights
   ## opt1 <- optim(par=c(.5,.7,.9,4,2,0,333,333,334),fn=fn1a,consteffects=TRUE,optwhat="equal",method="SANN",control=list(trace=1,parscale=theparscale,temp=100,tmax=100))
-  opt1 <- optim(par = c(.5, .7, .9, 4, 2, 0, 100, 100, 100), fn = fn, consteffects = consteffects,
-      optwhat = optwhat, reps=8, method = "SANN", control = list(trace = 1, parscale = theparscale, temp = 100, tmax = 100))
+  opt1 <- optim(
+    par = c(.5, .7, .9, 4, 2, 0, 100, 100, 100), fn = fn, consteffects = consteffects,
+    optwhat = optwhat, reps = 8, method = "SANN", control = list(trace = 1, parscale = theparscale, temp = 100, tmax = 100)
+  )
   opt1best <- c(opt1$par, opt1$value)
   ## Add a scenario that is neutral --- different weights amount to the same thing
-  opt2 <- optim(par = c(.5, .5, .5, 0, 0, 0, 100, 100, 100), method = "SANN", fn = fn1a, consteffects = consteffects,
-      optwhat = optwhat, reps=8, control = list(trace = 1, parscale = theparscale, temp = 100, tmax = 100))
+  opt2 <- optim(
+    par = c(.5, .5, .5, 0, 0, 0, 100, 100, 100), method = "SANN", fn = fn1a, consteffects = consteffects,
+    optwhat = optwhat, reps = 8, control = list(trace = 1, parscale = theparscale, temp = 100, tmax = 100)
+  )
   opt2best <- c(opt2$par, opt2$value)
-  opt4 <- opm(par = opt1$par, fn = fn1a, consteffects = consteffects, optwhat = optwhat, reps=8, method = optmethods,
-      control = list(trace = 1, parscale = theparscale))
+  opt4 <- opm(
+    par = opt1$par, fn = fn1a, consteffects = consteffects, optwhat = optwhat, reps = 8, method = optmethods,
+    control = list(trace = 1, parscale = theparscale)
+  )
   opt4$method <- row.names(opt4)
   opt4best <- opt4[opt4$value == min(opt4$value), 1:10]
-  opt5 <- opm(par = opt2$par, fn = fn, consteffects = consteffects, optwhat = optwhat, reps=8, method = optmethods,
-      control = list(trace = 1, parscale = theparscale))
+  opt5 <- opm(
+    par = opt2$par, fn = fn, consteffects = consteffects, optwhat = optwhat, reps = 8, method = optmethods,
+    control = list(trace = 1, parscale = theparscale)
+  )
   opt5$method <- row.names(opt5)
   opt5best <- opt5[opt5$value == min(opt5$value), 1:10]
   return(rbind(opt1best, opt2best, opt4best, opt5best))
@@ -77,7 +85,7 @@ opts_fn_a <- function(fn, consteffects, optwhat) {
 
 
 library(progressr)
-parms <- expand.grid(consteffects = c(TRUE, FALSE),optwhat=c("bestfe","bestbs","same"))
+parms <- expand.grid(consteffects = c(TRUE, FALSE), optwhat = c("bestfe", "bestbs", "same"))
 
 plan(multicore, workers = 6)
 is <- 1:6
@@ -90,10 +98,10 @@ with_progress({
     fnm <- paste(theparms, "res_tmp.rda", collapse = "")
     save(res, file = fnm)
     return(res)
-  },future.seed=12345)
+  }, future.seed = 12345)
 })
 plan(sequential)
-nms <- apply(parms,1,paste0,collapse="_")
+nms <- apply(parms, 1, paste0, collapse = "_")
 names(reslst) <- nms
 save(reslst, file = here::here("reslst.rda"))
 

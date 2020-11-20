@@ -1,7 +1,7 @@
 # Functions to calculate and directly apply block-size weights and precision weights for each simulation.
 
 nbwt_est_fun <- function(data) {
-    ## Block size weight
+  ## Block size weight
   data <- data %>%
     group_by(block) %>%
     mutate(
@@ -14,7 +14,7 @@ nbwt_est_fun <- function(data) {
 }
 
 hbwt_est_fun1 <- function(data) {
-    ## Precision weight
+  ## Precision weight
   data <- data %>%
     group_by(block) %>%
     mutate(
@@ -29,7 +29,7 @@ hbwt_est_fun1 <- function(data) {
 }
 
 hbwt_est_fun2 <- function(data) {
-    ## Precision weight
+  ## Precision weight
   ## Not necessary since pib is same for all blocks and all assignments of Z here
   data <- data %>%
     group_by(block) %>%
@@ -44,7 +44,7 @@ hbwt_est_fun2 <- function(data) {
 }
 
 hbwt_cent_est_fun <- function(data) {
-    ## Precision weight
+  ## Precision weight
   newdat <- data %>%
     group_by(block) %>%
     mutate(ycent = (Y - mean(Y)), zcent = (Z - mean(Z)))
@@ -77,4 +77,3 @@ my_diagnosands <- declare_diagnosands(
   mean_se = mean(std.error),
   mean_estimand = mean(estimand)
 )
-

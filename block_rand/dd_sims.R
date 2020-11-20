@@ -18,7 +18,7 @@ load(file = here::here("reslst.rda"))
 
 ## The columns of each element of reslst refer to a specific argument to the designer2 function such as proportion assigned to treatment in a block, etc.
 lapply(reslst, round, 2)
-reslstb <- lapply(reslst,as.matrix)
+reslstb <- lapply(reslst, as.matrix)
 
 dd_parms0 <- tibble(
   p_b = list(
@@ -59,11 +59,13 @@ dd_parms0 <- tibble(
   )
 )
 
-dd_parms1 <- expand_grid(p_b = list(c(.5, .5, .5), c(.5, .7, .9),c(.05,.30,.40)),
-    tau_b=list(c(0,0,0),c(.1,.1,.1),c(4,2,0),c(.25,.2,0)),
-    n_b=list(c(100,100,100),c(250,20,60),c(140,80,20)))
+dd_parms1 <- expand_grid(
+  p_b = list(c(.5, .5, .5), c(.5, .7, .9), c(.05, .30, .40)),
+  tau_b = list(c(0, 0, 0), c(.1, .1, .1), c(4, 2, 0), c(.25, .2, 0)),
+  n_b = list(c(100, 100, 100), c(250, 20, 60), c(140, 80, 20))
+)
 
-dd_parms2 <- rbind(dd_parms0,dd_parms1)
+dd_parms2 <- rbind(dd_parms0, dd_parms1)
 dd_parms2$B <- 3
 dd_parms <- rbind(dd_parms2, dd_parms2)
 dd_parms$const_effects_by_block <- rep(c(TRUE, FALSE), each = nrow(dd_parms2))
@@ -80,4 +82,3 @@ designs <- expand_design(
   const_effects_by_block = dd_parms[["const_effects_by_block"]],
   expand = FALSE
 )
-
