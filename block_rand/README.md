@@ -2,9 +2,9 @@
 
 This repository (or subdirectory of a repository) contains the source for the standards discussion about choices involves in the estimation of average treatment effects in block-randomized experiments.
 
-An [html preview is here](https://htmlpreview.github.io/?https://github.com/egap/standards_discussions/blob/jake_block_rand/block_rand/block_rand.html)
+The [html preview is here](https://htmlpreview.github.io/?https://github.com/egap/standards_discussions/blob/jake_block_rand/block_rand/block_rand.html)
 
-The pdf version can be downloaded directly.
+The [pdf version can be downloaded directly](https://github.com/egap/standards_discussions/blob/jake_block_rand/block_rand/block_rand.pdf)
 
 
 ## Provisional Precis:
