@@ -1,14 +1,21 @@
 ---
 title: "Estimating Average Treatment Effects in Block-randomized experiments: A conversation at The No Rules of Thumb Cafe"
-author: Jake Bowers and Christopher Grady and Gustavo Diaz
+author:
+  - Jake Bowers --- University of Illinois @ Urbana-Champaign
+  - Christopher Grady --- University of Illinois @ Urbana-Champaign
+  - Gustavo Diaz --- University of Illinois @ Urbana-Champaign
+bibliography: "block_rand.bib"
+urlcolor: blue
+linkcolor: blue
 output:
-  bookdown::html_document2:
-    code_folding: hide
-    toc: true
-    theme: journal
+  distill::distill_article:
+    self_contained: true
   bookdown::pdf_document2:
+    fontsize: 11pt 
     keep_tex: true
-bibliography: block_rand.bib
+    toc: false
+    includes:
+      in_header: header.tex
 ---
 
 
@@ -41,7 +48,7 @@ series of small independent experiments? Within each block you should be able
 to estimate the ATE and SE, right? And so you just need to combine those all
 together somehow, right? So it should be simple, right?"
 
-"Ah," the first experiment leans over to look at what the barista is doing, "Right. None of has very small blocks --- like we each only have three blocks and we have more than 10 people in each block. So we can calculate randomization-justified ATEs and SEs within each block.  But we are arguing about the weights. Say I found an effect of 5 in one block and 0 in another block. Should the overall effect just be $(5+1)/2=3$? What if the first block has 100 people and second block has 10 people?  Shouldn't the effect be $(5 \times 100)/110 + (1 \times 10)/110 = `r 5*100/110 + 1*10/110`$?"
+"Ah," the first experiment leans over to look at what the barista is doing, "Right. None of has very small blocks --- like we each only have three blocks and we have more than 10 people in each block. So we can calculate randomization-justified ATEs and SEs within each block.  But we are arguing about the weights. Say I found an effect of 5 in one block and 0 in another block. Should the overall effect just be $(5+1)/2=3$? What if the first block has 100 people and second block has 10 people?  Shouldn't the effect be $(5 \times 100)/110 + (1 \times 10)/110 = `r round(5*100/110 + 1*10/110,2)`$?"
 
 "So, you are saying that you should combine block-level estimates using the
 proportion of the total sample in the block as a weight?" the bartender is
@@ -81,7 +88,7 @@ The barista strokes his moustache while the sound of grinding coffee drowns out 
 
 "Hey, look at this!" the experiments have come back to the counter carrying their empty coffee cups and holding up one of the their laptops to show a figure. The morning rush is over. The barista is wiping down the bar.
 
-```{r results, echo=FALSE, out.width='80%',fig.cap='Estimated ATE Distributions for Four Block-randomized experiments. 10,000 simulations of each design.'}
+```{r results, echo=FALSE, out.width='80%',fig.align='center',fig.cap='Estimated ATE Distributions for Four Block-randomized experiments. 10,000 simulations of each design holding the population fixed. Precision weights work best for experiment 2, worst for experiment 1, and the same as block-size weights for experiments 3 and 4.'}
 knitr::include_graphics("g_all.png")
 ```
 

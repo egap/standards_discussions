@@ -1,6 +1,7 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
 ]{article}
@@ -38,8 +39,12 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={Estimating Average Treatment Effects in Block-randomized experiments: A conversation at The No Rules of Thumb Cafe},
-  pdfauthor={Jake Bowers and Christopher Grady and Gustavo Diaz},
-  hidelinks,
+  pdfauthor={Jake Bowers --- University of Illinois @ Urbana-Champaign; Christopher Grady --- University of Illinois @ Urbana-Champaign; Gustavo Diaz --- University of Illinois @ Urbana-Champaign},
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=blue,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
@@ -70,6 +75,9 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{0em}
+\newgeometry{left=1.5in,right=1.5in}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -77,7 +85,7 @@
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
  {% don't indent paragraphs
   \setlength{\parindent}{0pt}
   % turn on hanging indent if param 1 is 1
@@ -91,20 +99,16 @@
 \usepackage{calc}
 \newcommand{\CSLBlock}[1]{#1\hfill\break}
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Estimating Average Treatment Effects in Block-randomized experiments: A conversation at The No Rules of Thumb Cafe}
-\author{Jake Bowers and Christopher Grady and Gustavo Diaz}
+\author{Jake Bowers --- University of Illinois @ Urbana-Champaign \and Christopher Grady --- University of Illinois @ Urbana-Champaign \and Gustavo Diaz --- University of Illinois @ Urbana-Champaign}
 \date{}
 
 \begin{document}
 \maketitle
 
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
 Four field experiments meet at a the polished wooden bar of their neighborhood coffee shop.
 
 ``Y'all do not look like the bright and energetic agents of evidence-based
@@ -134,7 +138,7 @@ series of small independent experiments? Within each block you should be able
 to estimate the ATE and SE, right? And so you just need to combine those all
 together somehow, right? So it should be simple, right?''
 
-``Ah,'' the first experiment leans over to look at what the barista is doing, ``Right. None of has very small blocks --- like we each only have three blocks and we have more than 10 people in each block. So we can calculate randomization-justified ATEs and SEs within each block. But we are arguing about the weights. Say I found an effect of 5 in one block and 0 in another block. Should the overall effect just be \((5+1)/2=3\)? What if the first block has 100 people and second block has 10 people? Shouldn't the effect be \((5 \times 100)/110 + (1 \times 10)/110 = 4.6363636\)?''
+``Ah,'' the first experiment leans over to look at what the barista is doing, ``Right. None of has very small blocks --- like we each only have three blocks and we have more than 10 people in each block. So we can calculate randomization-justified ATEs and SEs within each block. But we are arguing about the weights. Say I found an effect of 5 in one block and 0 in another block. Should the overall effect just be \((5+1)/2=3\)? What if the first block has 100 people and second block has 10 people? Shouldn't the effect be \((5 \times 100)/110 + (1 \times 10)/110 = 4.64\)?''
 
 ``So, you are saying that you should combine block-level estimates using the
 proportion of the total sample in the block as a weight?'' the bartender is
@@ -175,7 +179,12 @@ The barista strokes his moustache while the sound of grinding coffee drowns out 
 ``Hey, look at this!'' the experiments have come back to the counter carrying their empty coffee cups and holding up one of the their laptops to show a figure. The morning rush is over. The barista is wiping down the bar.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{g_all} \caption{Estimated ATE Distributions for Four Block-randomized experiments. 10,000 simulations of each design.}\label{fig:results}
+
+{\centering \includegraphics[width=0.8\linewidth]{g_all} 
+
+}
+
+\caption{Estimated ATE Distributions for Four Block-randomized experiments. 10,000 simulations of each design holding the population fixed. Precision weights work best for experiment 2, worst for experiment 1, and the same as block-size weights for experiments 3 and 4.}\label{fig:results}
 \end{figure}
 
 ``Wow! I didn't realize that your designs were so different.'' the barista stops wiping down the counter. ``It is like one of you is a light roast from Ethiopia and the other is a dark roast blend!''
