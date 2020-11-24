@@ -8,10 +8,10 @@ bibliography: "block_rand.bib"
 urlcolor: blue
 linkcolor: blue
 output:
-  distill::distill_article:
+  bookdown::html_document2:
     self_contained: true
   bookdown::pdf_document2:
-    fontsize: 11pt 
+    fontsize: 11pt
     keep_tex: true
     toc: false
     includes:
