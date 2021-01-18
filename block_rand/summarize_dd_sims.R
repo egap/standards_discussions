@@ -186,7 +186,8 @@ ggsave(plot = g_pr_better, filename = "g_pr_better.pdf")
 g_close_title <- expression(paste("Exp 3: ", n[b] == "(256,53,16), ", p[b] == "(.52,.53,.53), ", tau[b] == "(.38,.79,1.96)"))
 gs_close_true <- sims_close[, .(ate = mean(estimand))]
 g_close <- ggplot(sims_close, aes(x = estimate, color = new_est_lab, group = new_est_lab)) +
-  geom_density(size = 2) +
+  #geom_density(aes(size = (3-as.numeric(as.factor(new_est_lab)))/2),alpha=.01) +
+  geom_density(size=2,alpha=.1) +
   geom_point(data = gs_close_true, aes(x = ate, y = 0), shape = 17, size = 3, inherit.aes = FALSE) +
   geom_text(
     data = gs_close_true, aes(x = ate, y = 0, label = "True ATE"), inherit.aes = FALSE,
@@ -203,6 +204,8 @@ g_close <- ggplot(sims_close, aes(x = estimate, color = new_est_lab, group = new
   theme(axis.text.x = element_text(size = 9), axis.text.y = element_text(size = 9)) +
   theme(legend.position = c(.2, .8), legend.background = element_blank(), legend.text = element_text(size = 10)) +
   labs(color = "Estimator") +
+  #scale_color_discrete(type=grDevices::adjustcolor(colorblind_pal()(3)[2:3],alpha.f=.5))+
+  #discrete_scale("color",scale_name="Estimator",palette=colorblind_pal())+
   scale_color_colorblind() +
   guides(color = guide_legend(override.aes = list(size = 2, linetype = 1, shape = 16)))
 g_close
@@ -234,7 +237,7 @@ g_same <- ggplot(sims_same, aes(x = estimate, color = new_est_lab, group = new_e
 g_same
 ggsave(plot = g_same, filename = "g_same.pdf")
 
-g_all <- grid.arrange(g_close, g_same, g_pr_better, g_bs_better, nrow = 2, ncol = 2)
+g_all <- grid.arrange(g_bs_better, g_pr_better, g_close, g_same, nrow = 2, ncol = 2)
 
-ggsave(plot = g_all, filename = "g_all.pdf", width = 11, height = 11)
-ggsave(plot = g_all, filename = "g_all.png", width = 11, height = 11)
+ggsave(plot = g_all, filename = "g_all.pdf", width = 10.5, height = 10.5)
+ggsave(plot = g_all, filename = "g_all.png", width = 10.5, height = 10.5)

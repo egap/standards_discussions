@@ -245,10 +245,10 @@
     },
     "codetools": {
       "Package": "codetools",
-      "Version": "0.2-17",
+      "Version": "0.2-16",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "61155079bcb2b07b4465d791a331a7de"
+      "Hash": "89cf4b8207269ccf82fbeb6473fd662b"
     },
     "colorspace": {
       "Package": "colorspace",
@@ -721,10 +721,10 @@
     },
     "nlme": {
       "Package": "nlme",
-      "Version": "3.1-150",
+      "Version": "3.1-149",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "82e52d2c6e674764ffb122d084afa96b"
+      "Hash": "7c24ab3a1e3afe50388eb2d893aab255"
     },
     "nloptr": {
       "Package": "nloptr",
@@ -949,6 +949,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "33a5b27a03da82ac4b1d43268f80088a"
+    },
+    "rticles": {
+      "Package": "rticles",
+      "Version": "0.17",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "12e9c0d85a390d72ec84e703ab129a39"
     },
     "rvest": {
       "Package": "rvest",
