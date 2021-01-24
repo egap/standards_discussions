@@ -36,7 +36,7 @@ pots lining the wall behind the bar and turns to the customers. The sign says,
 
 "Randomizing treatment assignment within pre-defined strata or blocks was
 *supposed* to make our findings more precise without adding any more
-complications to our analyes," sighs the second experiment.
+complications to our analyses," sighs the second experiment.
 
 "Yeah. They said, `A block-randomized experiment is just a series of
 independent mini-experiments'. And, of course, we know how to estimate
@@ -55,7 +55,7 @@ the ATE and SE, right? And you just need to combine those all together somehow,
 right? So shouldn't it be simple?"
 
 "Ah," the first experiment leans over to look at what the barista is doing,
-"Right. None of has very small blocks --- we each only have three blocks
+"Right. None of us has very small blocks --- we each only have three blocks
 and we have more than 10 people in each block. So we can calculate
 randomization-justified ATEs and SEs within each block.  But we are arguing
 about the weights. Say I found an effect of 5 in one block and 1 in another
@@ -99,7 +99,7 @@ field experiments, why don't you just use the idea that blocks with more
 information should contribute more to the estimate and get back to enjoying
 your day?"
 
-"Well, that is kind of the problem," says the second experiment a bit wearily, as if rehashing an old argument. "It is very expensive to do policy-relevant field experiments --- so we might want to trade a little bit of bias for increases in precision. We also know that a different form of weighting that we call 'precision-weighting' is optimal from that perspective.^[See @kalton1968, page 119 or the exercise on page 128--129 of @gerber2012field, the [Green, Coppockm and Lin Lab Standard Operating Procedure](https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html#taking-block-randomization-into-account-in-ses-and-cis) or even the derivations for the optimal weight to diminish the size of the variance of a weighted average on wikipedia, or the related derivations in @humphreys2009bounds or @hansen2008cbs).]"
+"Well, that is kind of the problem," says the second experiment a bit wearily, as if rehashing an old argument. "It is very expensive to do policy-relevant field experiments --- so we might want to trade a little bit of bias for increases in precision. We also know that a different form of weighting that we call 'precision-weighting' is optimal from that perspective.^[See @kalton1968, page 119 or the exercise on page 128--129 of @gerber2012field, the [Green, Coppock and Lin Lab Standard Operating Procedure](https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html#taking-block-randomization-into-account-in-ses-and-cis) or even the derivations for the optimal weight to diminish the size of the variance of a weighted average on Wikipedia, or the related derivations in @humphreys2009bounds or @hansen2008cbs).]"
 
 "Can you explain the intuition behind the precision-weighting approach?" The third experiment gestures to the barista, "Meanwhile, I'm happy to help you test free espresso shots while you figure out your own procedure for this new batch of beans."
 
@@ -115,7 +115,7 @@ treated-person block from this perspective. From the perspective of information
 or precision we should instead weight by **both** block-size **and** proportion
 assigned to treatment --- the second block should get a lower weight in this
 case. It turns out that these precision weights are exactly this combination.
-In this case,the first block would get a weight proportional to (100/200)(50/100)(1-
+In this case, the first block would get a weight proportional to (100/200)(50/100)(1-
 50/100)=.125 --- (100/200) is the block-size weight and (50/100) were assigned
 to treatment. The second block would have a weight proportional to (100/200)(5/100)(1-
 5/100)=.0238. After making them sum to 1, we have the precision weights of .84 for the first
@@ -186,7 +186,9 @@ allses
 
 "These are pretty large differences in effect. You said the first one, estimated ATE=`r round(5*100/200 + 1*100/200,2)`, arises from an unbiased estimator, so we should choose the block-sized weighting in this case, right?" The barista looks puzzled and grinds more beans.  The sound of grinding coffee drowns out further conversation for a few seconds.  When the grinding stops, the barista asks, "Ok. That makes sense. So, when you have blocks of different sizes or blocks with different probabilities of treatment assignment, you should use that more precise weight, the 'precision-weight', and when you have blocks where probability of treatment of assignment is the same, both weights should be the same, so then the 'precision-weight' would just be the same as the 'block-size weight'. So you should just use that precision weight always if you want to follow the intuition that overall estimates should reflect blocks with more information, huh? You are actual experiments. I just make coffee. Shouldn't you have figured that out?"
 
-The first experiment shakes their head.  "It is not so simple. 'Always use precision weights / fixed effects' might be a rule of thumb that would lead you astray sometimes. And of coure, you should know that there are more than two ways to calculate
+<!--The references to Pashley below look wrong. Perphaps a problem with the bib file-->
+
+The first experiment shakes their head.  "It is not so simple. 'Always use precision weights / fixed effects' might be a rule of thumb that would lead you astray sometimes. And of course, you should know that there are more than two ways to calculate
 these weights and that the only way that is guaranteed to produce unbiased
 estimates is the block-size weight. You should see @pashley2020blocked and
 @pashley2020blkvar to learn about estimating average treatment effects and
@@ -196,7 +198,7 @@ errors within pair.^[@pashley2020blocked describes the many different
 approaches to analyzing experiments with randomization within large blocks (as
 described in this note) but also within small blocks such as pairs and in sets
 with only one treated or control unit. The "many small experiments" idea that
-we describe here is difficult to implement when a block containst only one
+we describe here is difficult to implement when a block contains only one
 treated or one control unit since the variance of outcomes for those units is
 undefined. In a nutshell, they propose a hybrid variance estimator that is a
 weighted combination of the small- and large-block randomized estimators. For
@@ -237,7 +239,7 @@ experiment drums fingers on the bar and taps toes on the brass footrest of the
 bar stool and addresses the other experiments, "I like our barista's idea! We have the
 [DeclareDesign](https://declaredesign.org/) package that we can use. Why don't
 we compare the two approaches?" The other experiments nod. "We'll take our
-cappucinos at the table while we work, if you don't mind. Sorry to step away."
+cappuccinos at the table while we work, if you don't mind. Sorry to step away."
 
 "Sure. No problem." The barista motions them away. "I'll be interested to hear what you find."
 
@@ -263,7 +265,7 @@ I didn't follow that rule of thumb!"
 "Is that the gold line top left panel labeled 'Exp 1'?", the barista puts on his reading glasses from the pocket in his work shirt. "You had 100 people in each block, randomly assigned 50%, 70% and 90% of people in each of the blocks to treatment, and the treatment effects were 4, 2 and 0 standard deviations?"
 
 "Yes. My blocks were administrative units that were the same size but one of
-the adminitrators really  wouldn't participate unless nearly everyone got the
+the administrators really  wouldn't participate unless nearly everyone got the
 treatment. The intervention clearly was ultra effective in some places and not
 in others."
 
@@ -294,7 +296,7 @@ block."
 
 "But my treatment effects were just like experiment 1 --- one block with no
 effect and two other blocks with quite large effects. While experiment 3 also
-had effects that varied, but but the largest effect was in the smallest block,
+had effects that varied, but the largest effect was in the smallest block,
 and each block had some effect." The fourth experiment chimed in.
 
 "Well, if you had been in the situations of the other two experiments, you
@@ -306,12 +308,12 @@ of work. Would you like another coffee? It would be on the house given how much
 you've taught me today."
 
 "It was some work, but the simulations were not so difficult to execute. We can
-put all of the code up on on [our github
+put all of the code up on [our github
 repository](https://github.com/egap/standards_discussions/block_rand)  so you
 and your other customers can use it." The fourth experiment opens a computer
 and starts to type.
 
-The third experiment frowns a litte, "This simulation based approach would work better, by the
+The third experiment frowns a little, "This simulation based approach would work better, by the
 way, if we used simulation to choose weighting *before* collecting the data. Of course, we
 can't know in advance what our treatment effects will be, but we could try out some guesses. Most power-analyses
 specify one effect size for the whole experiment and do not talk about
