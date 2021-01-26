@@ -38,8 +38,8 @@ pots lining the wall behind the bar and turns to the customers. The sign says,
 *supposed* to make our findings more precise without adding any more
 complications to our analyses," sighs the second experiment.
 
-"Yeah. They said, `A block-randomized experiment is just a series of
-independent mini-experiments'. And, of course, we know how to estimate
+"Yeah." They said, "A block-randomized experiment is just a series of
+independent mini-experiments. And, of course, we know how to estimate
 treatment effects and standard errors for one experiment, but now we can't
 agree on how to combine our estimates across more than one block," explains the
 third.
