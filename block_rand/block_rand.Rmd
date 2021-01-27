@@ -1,15 +1,11 @@
 ---
-title: "Estimating Average Treatment Effects in Block-randomized experiments: A conversation at the No Rules of Thumb Cafe"
-author:
-  - Jake Bowers --- University of Illinois @ Urbana-Champaign
-  - Christopher Grady --- University of Illinois @ Urbana-Champaign
-  - Gustavo Diaz --- University of Illinois @ Urbana-Champaign
 bibliography: "block_rand.bib"
 urlcolor: blue
 linkcolor: blue
 output:
   bookdown::html_document2:
     self_contained: true
+    theme: journal
   bookdown::pdf_document2:
     fontsize: 11pt
     keep_tex: true
@@ -17,6 +13,10 @@ output:
     includes:
       in_header: header.tex
 ---
+
+<!--title and author will be displayed on the EGAP site page; commented out so as not to duplicate-->
+<!--title: "Estimating Average Treatment Effects in Block-randomized experiments: A conversation at the No Rules of Thumb Cafe"-->
+<!--author: Jake Bowers - University of Illinois @ Urbana-Champaign, Christopher Grady - University of Illinois @ Urbana-Champaign, Gustavo Diaz - University of Illinois @ Urbana-Champaign-->
 
 <style type="text/css">
   body{
@@ -30,7 +30,7 @@ Four field experiments meet at the polished wooden bar of their neighborhood cof
 policy making that I am used to seeing each morning. What's up?" The barista
 climbs down from dusting the sign hanging over the rows of coffee cups and tea
 pots lining the wall behind the bar and turns to the customers. The sign says,
-"No Rules of Thumb".
+"No Rules of Thumb."
 
 "We are block randomized today," grumps the first experiment.
 
@@ -44,7 +44,7 @@ treatment effects and standard errors for one experiment, but now we can't
 agree on how to combine our estimates across more than one block," explains the
 third.
 
-"And it just doesn't matter how we estimate our effects. We should just always use fixed-effects." grumbles the fourth.
+"And it just doesn't matter how we estimate our effects. We should just always use fixed-effects," grumbles the fourth.
 
 "No! That could be a big problem!" The first experiment almost jumps out of the chair.
 
@@ -54,7 +54,7 @@ small independent experiments? Within each block you should be able to estimate
 the ATE and SE, right? And you just need to combine those all together somehow,
 right? So shouldn't it be simple?"
 
-"Ah," the first experiment leans over to look at what the barista is doing,
+"Ah," the first experiment leans over to look at what the barista is doing.
 "Right. None of us has very small blocks --- we each only have three blocks
 and we have more than 10 people in each block. So we can calculate
 randomization-justified ATEs and SEs within each block.  But we are arguing
@@ -74,9 +74,9 @@ information should play a bigger role in the overall story of the experiment."
 "We should," says the first experiment a bit grumpily, "After all, lots of
 previous literature and even fairly simple math tells us that this block-size
 weighted estimator is unbiased and other weights produce biased estimators. For
-example, we have been reading @gerber2012field (Chapter 3) and the blog post,
+example, we have been reading @gerber2012field (Chapter 3), the blog post,
 [The trouble with 'controlling for'
-blocks](https://declaredesign.org/blog/biased-fixed-effects.html) or the
+blocks](https://declaredesign.org/blog/biased-fixed-effects.html), and the
 analytics in @humphreys2009bounds, which make exactly this argument."
 
 "By the way, what are you doing with the scales this morning? Usually you just
@@ -87,8 +87,8 @@ at the scales, bowls, and beans.
 balance between bitter and sour. And, in general, with the beans I'm used to
 getting, I know that about 17 grams of beans ground at about level 2 and
 extracted at 9 psi for about 24 seconds makes a good double shot using this
-grinder and this machine and 40 percent humidity in the shope. But, since these
-are new beans I have to explore the values of these variables a bit before
+grinder and this machine and 40 percent humidity in the shop. But, since these
+are new beans, I have to explore the values of these variables a bit before
 deciding about the right balance. I'll be back to pulling shots quickly
 tomorrow. Today, however, I need to make some test coffees that I may not sell
 in order to learn how to make good coffee with these beans. Just a sec, it will
@@ -279,7 +279,7 @@ at the simulations using this design from [The trouble with 'controlling for'
 blocks](https://declaredesign.org/blog/biased-fixed-effects.html)." The first
 experiment nods.
 
-"But, in my case, precision weights are best", Experiment 2 speaks up. "I also
+"But, in my case, precision weights are best," the second experiment speaks up. "I also
 had a situation where the administrators of the blocks differed in their
 willingness to allow us to randomize but I also had differing block sizes and
 my treatment effects were nearly the same across the blocks. Here, both
@@ -288,8 +288,8 @@ if I use the precision weight. This is important to me given my smaller sample
 size. As you can see, if there is bias, it is tiny and didn't change the
 coverage of the confidence intervals."
 
-"For both us," the third experiment points to itself and the fourth experiment,
-"it doesn't matter which weight we use. We were worried for no reason. "Both of
+"For both of us," the third experiment points to itself and the fourth experiment,
+"it doesn't matter which weight we use. We were worried for no reason! Both of
 us were run in administrative units that differed a lot in size, but our
 administrators were able to randomize more or less the same amount within each
 block."
@@ -309,13 +309,13 @@ you've taught me today."
 
 "It was some work, but the simulations were not so difficult to execute. We can
 put all of the code up on [our github
-repository](https://github.com/egap/standards_discussions/block_rand)  so you
+repository](https://github.com/egap/standards_discussions/block_rand) so you
 and your other customers can use it." The fourth experiment opens a computer
 and starts to type.
 
-The third experiment frowns a little, "This simulation based approach would work better, by the
+The third experiment frowns a little. "This simulation-based approach would work better, by the
 way, if we used simulation to choose weighting *before* collecting the data. Of course, we
-can't know in advance what our treatment effects will be, but we could try out some guesses. Most power-analyses
+can't know in advance what our treatment effects will be, but we could try out some guesses. Most power analyses
 specify one effect size for the whole experiment and do not talk about
 block-by-block effect differences. But maybe we will do more of this if
 precision gains are really important in the future --- like when policy
