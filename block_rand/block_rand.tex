@@ -37,8 +37,6 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Estimating Average Treatment Effects in Block-randomized experiments: A conversation at the No Rules of Thumb Cafe},
-  pdfauthor={Jake Bowers --- University of Illinois @ Urbana-Champaign; Christopher Grady --- University of Illinois @ Urbana-Champaign; Gustavo Diaz --- University of Illinois @ Urbana-Champaign},
   colorlinks=true,
   linkcolor=blue,
   filecolor=Maroon,
@@ -101,12 +99,10 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\title{Estimating Average Treatment Effects in Block-randomized experiments: A conversation at the No Rules of Thumb Cafe}
-\author{Jake Bowers --- University of Illinois @ Urbana-Champaign \and Christopher Grady --- University of Illinois @ Urbana-Champaign \and Gustavo Diaz --- University of Illinois @ Urbana-Champaign}
-\date{}
+\author{}
+\date{\vspace{-2.5em}}
 
 \begin{document}
-\maketitle
 
 Four field experiments meet at the polished wooden bar of their neighborhood coffee shop.
 
@@ -120,15 +116,15 @@ pots lining the wall behind the bar and turns to the customers. The sign says,
 
 ``Randomizing treatment assignment within pre-defined strata or blocks was
 \emph{supposed} to make our findings more precise without adding any more
-complications to our analyes,'' sighs the second experiment.
+complications to our analyses,'' sighs the second experiment.
 
-``Yeah. They said, `A block-randomized experiment is just a series of
-independent mini-experiments'. And, of course, we know how to estimate
+``Yeah.'' They said, ``A block-randomized experiment is just a series of
+independent mini-experiments. And, of course, we know how to estimate
 treatment effects and standard errors for one experiment, but now we can't
 agree on how to combine our estimates across more than one block,'' explains the
 third.
 
-``And it just doesn't matter how we estimate our effects. We should just always use fixed-effects.'' grumbles the fourth.
+``And it just doesn't matter how we estimate our effects. We should just always use fixed-effects,'' grumbles the fourth.
 
 ``No! That could be a big problem!'' The first experiment almost jumps out of the chair.
 
@@ -138,8 +134,8 @@ small independent experiments? Within each block you should be able to estimate
 the ATE and SE, right? And you just need to combine those all together somehow,
 right? So shouldn't it be simple?''
 
-``Ah,'' the first experiment leans over to look at what the barista is doing,
-``Right. None of has very small blocks --- we each only have three blocks
+``Ah,'' the first experiment leans over to look at what the barista is doing.
+``Right. None of us has very small blocks --- we each only have three blocks
 and we have more than 10 people in each block. So we can calculate
 randomization-justified ATEs and SEs within each block. But we are arguing
 about the weights. Say I found an effect of 5 in one block and 1 in another
@@ -158,9 +154,9 @@ information should play a bigger role in the overall story of the experiment.''
 ``We should,'' says the first experiment a bit grumpily, ``After all, lots of
 previous literature and even fairly simple math tells us that this block-size
 weighted estimator is unbiased and other weights produce biased estimators. For
-example, we have been reading Gerber and Green (2012) (Chapter 3) and the blog post,
+example, we have been reading Gerber and Green (2012) (Chapter 3), the blog post,
 \href{https://declaredesign.org/blog/biased-fixed-effects.html}{The trouble with `controlling for'
-blocks} or the
+blocks}, and the
 analytics in Humphreys (2009), which make exactly this argument.''
 
 ``By the way, what are you doing with the scales this morning? Usually you just
@@ -171,8 +167,8 @@ at the scales, bowls, and beans.
 balance between bitter and sour. And, in general, with the beans I'm used to
 getting, I know that about 17 grams of beans ground at about level 2 and
 extracted at 9 psi for about 24 seconds makes a good double shot using this
-grinder and this machine and 40 percent humidity in the shope. But, since these
-are new beans I have to explore the values of these variables a bit before
+grinder and this machine and 40 percent humidity in the shop. But, since these
+are new beans, I have to explore the values of these variables a bit before
 deciding about the right balance. I'll be back to pulling shots quickly
 tomorrow. Today, however, I need to make some test coffees that I may not sell
 in order to learn how to make good coffee with these beans. Just a sec, it will
@@ -183,7 +179,7 @@ field experiments, why don't you just use the idea that blocks with more
 information should contribute more to the estimate and get back to enjoying
 your day?''
 
-``Well, that is kind of the problem,'' says the second experiment a bit wearily, as if rehashing an old argument. ``It is very expensive to do policy-relevant field experiments --- so we might want to trade a little bit of bias for increases in precision. We also know that a different form of weighting that we call `precision-weighting' is optimal from that perspective.\footnote{See Kalton (1968), page 119 or the exercise on page 128--129 of Gerber and Green (2012), the \href{https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html\#taking-block-randomization-into-account-in-ses-and-cis}{Green, Coppockm and Lin Lab Standard Operating Procedure} or even the derivations for the optimal weight to diminish the size of the variance of a weighted average on wikipedia, or the related derivations in Humphreys (2009) or Hansen and Bowers (2008)).}''
+``Well, that is kind of the problem,'' says the second experiment a bit wearily, as if rehashing an old argument. ``It is very expensive to do policy-relevant field experiments --- so we might want to trade a little bit of bias for increases in precision. We also know that a different form of weighting that we call `precision-weighting' is optimal from that perspective.\footnote{See Kalton (1968), page 119 or the exercise on page 128--129 of Gerber and Green (2012), the \href{https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html\#taking-block-randomization-into-account-in-ses-and-cis}{Green, Coppock and Lin Lab Standard Operating Procedure} or even the derivations for the optimal weight to diminish the size of the variance of a weighted average on Wikipedia, or the related derivations in Humphreys (2009) or Hansen and Bowers (2008)).}''
 
 ``Can you explain the intuition behind the precision-weighting approach?'' The third experiment gestures to the barista, ``Meanwhile, I'm happy to help you test free espresso shots while you figure out your own procedure for this new batch of beans.''
 
@@ -199,7 +195,7 @@ treated-person block from this perspective. From the perspective of information
 or precision we should instead weight by \textbf{both} block-size \textbf{and} proportion
 assigned to treatment --- the second block should get a lower weight in this
 case. It turns out that these precision weights are exactly this combination.
-In this case,the first block would get a weight proportional to (100/200)(50/100)(1-
+In this case, the first block would get a weight proportional to (100/200)(50/100)(1-
 50/100)=.125 --- (100/200) is the block-size weight and (50/100) were assigned
 to treatment. The second block would have a weight proportional to (100/200)(5/100)(1-
 5/100)=.0238. After making them sum to 1, we have the precision weights of .84 for the first
@@ -210,7 +206,7 @@ attention to block-size). So, we could report the block-size weighted effect of 
 
 ``These are pretty large differences in effect. You said the first one, estimated ATE=3, arises from an unbiased estimator, so we should choose the block-sized weighting in this case, right?'' The barista looks puzzled and grinds more beans. The sound of grinding coffee drowns out further conversation for a few seconds. When the grinding stops, the barista asks, ``Ok. That makes sense. So, when you have blocks of different sizes or blocks with different probabilities of treatment assignment, you should use that more precise weight, the `precision-weight,' and when you have blocks where probability of treatment of assignment is the same, both weights should be the same, so then the `precision-weight' would just be the same as the `block-size weight.' So you should just use that precision weight always if you want to follow the intuition that overall estimates should reflect blocks with more information, huh? You are actual experiments. I just make coffee. Shouldn't you have figured that out?''
 
-The first experiment shakes their head. ``It is not so simple. `Always use precision weights / fixed effects' might be a rule of thumb that would lead you astray sometimes. And of coure, you should know that there are more than two ways to calculate
+The first experiment shakes their head. ``It is not so simple. `Always use precision weights / fixed effects' might be a rule of thumb that would lead you astray sometimes. And of course, you should know that there are more than two ways to calculate
 these weights and that the only way that is guaranteed to produce unbiased
 estimates is the block-size weight. You should see N. E. Pashley and Miratrix (2020) and
 N. Pashley and Miratrix (2020) to learn about estimating average treatment effects and
@@ -220,7 +216,7 @@ errors within pair.\footnote{N. E. Pashley and Miratrix (2020) describes the man
   approaches to analyzing experiments with randomization within large blocks (as
   described in this note) but also within small blocks such as pairs and in sets
   with only one treated or control unit. The "many small experiments" idea that
-  we describe here is difficult to implement when a block containst only one
+  we describe here is difficult to implement when a block contains only one
   treated or one control unit since the variance of outcomes for those units is
   undefined. In a nutshell, they propose a hybrid variance estimator that is a
   weighted combination of the small- and large-block randomized estimators. For
@@ -261,7 +257,7 @@ experiment drums fingers on the bar and taps toes on the brass footrest of the
 bar stool and addresses the other experiments, ``I like our barista's idea! We have the
 \href{https://declaredesign.org/}{DeclareDesign} package that we can use. Why don't
 we compare the two approaches?'' The other experiments nod. ``We'll take our
-cappucinos at the table while we work, if you don't mind. Sorry to step away.''
+cappuccinos at the table while we work, if you don't mind. Sorry to step away.''
 
 ``Sure. No problem.'' The barista motions them away. ``I'll be interested to hear what you find.''
 
@@ -292,7 +288,7 @@ I didn't follow that rule of thumb!''
 ``Is that the gold line top left panel labeled `Exp 1?','' the barista puts on his reading glasses from the pocket in his work shirt. ``You had 100 people in each block, randomly assigned 50\%, 70\% and 90\% of people in each of the blocks to treatment, and the treatment effects were 4, 2 and 0 standard deviations?''
 
 ``Yes. My blocks were administrative units that were the same size but one of
-the adminitrators really wouldn't participate unless nearly everyone got the
+the administrators really wouldn't participate unless nearly everyone got the
 treatment. The intervention clearly was ultra effective in some places and not
 in others.''
 
@@ -306,7 +302,7 @@ at the simulations using this design from \href{https://declaredesign.org/blog/b
 blocks}.'' The first
 experiment nods.
 
-``But, in my case, precision weights are best,'' Experiment 2 speaks up. ``I also
+``But, in my case, precision weights are best,'' the second experiment speaks up. ``I also
 had a situation where the administrators of the blocks differed in their
 willingness to allow us to randomize but I also had differing block sizes and
 my treatment effects were nearly the same across the blocks. Here, both
@@ -315,15 +311,15 @@ if I use the precision weight. This is important to me given my smaller sample
 size. As you can see, if there is bias, it is tiny and didn't change the
 coverage of the confidence intervals.''
 
-``For both us,'' the third experiment points to itself and the fourth experiment,
-``it doesn't matter which weight we use. We were worried for no reason.''Both of
+``For both of us,'' the third experiment points to itself and the fourth experiment,
+``it doesn't matter which weight we use. We were worried for no reason! Both of
 us were run in administrative units that differed a lot in size, but our
 administrators were able to randomize more or less the same amount within each
-block."
+block.''
 
 ``But my treatment effects were just like experiment 1 --- one block with no
 effect and two other blocks with quite large effects. While experiment 3 also
-had effects that varied, but but the largest effect was in the smallest block,
+had effects that varied, but the largest effect was in the smallest block,
 and each block had some effect.'' The fourth experiment chimed in.
 
 ``Well, if you had been in the situations of the other two experiments, you
@@ -335,14 +331,14 @@ of work. Would you like another coffee? It would be on the house given how much
 you've taught me today.''
 
 ``It was some work, but the simulations were not so difficult to execute. We can
-put all of the code up on on \href{https://github.com/egap/standards_discussions/block_rand}{our github
+put all of the code up on \href{https://github.com/egap/standards_discussions/block_rand}{our github
 repository} so you
 and your other customers can use it.'' The fourth experiment opens a computer
 and starts to type.
 
-The third experiment frowns a litte, ``This simulation based approach would work better, by the
+The third experiment frowns a little. ``This simulation-based approach would work better, by the
 way, if we used simulation to choose weighting \emph{before} collecting the data. Of course, we
-can't know in advance what our treatment effects will be, but we could try out some guesses. Most power-analyses
+can't know in advance what our treatment effects will be, but we could try out some guesses. Most power analyses
 specify one effect size for the whole experiment and do not talk about
 block-by-block effect differences. But maybe we will do more of this if
 precision gains are really important in the future --- like when policy
