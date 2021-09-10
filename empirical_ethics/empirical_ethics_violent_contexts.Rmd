@@ -1,0 +1,167 @@
+---
+title: "Transparency in research ethics: Methods to monitor principles and practice in violent contexts"
+author: "Hannah Baron & Lauren Young"
+date: "9/10/2021"
+output: html_document
+---
+
+
+
+Violence research involving human participants has doubled in the past ten years (Baron and Young 2021). While attention to research ethics is imperative in all circumstances where political scientists engage with human participants, it is particularly relevant in violent contexts where the potential for extreme harm is heightened. This Standards Discussion highlights practical steps and resources that could help those who study violence better adhere to the ethical principles they aspire to uphold. Our suggestions are not exhaustive, and are generally ways to validate and monitor assumptions related to ethics rather than “solve” ethical dilemmas. We discuss four families of practices and link to resources that have informed our efforts to: 
+
+1) Document risk assessments; 
+2) Avoid distress and negative psychological outcomes; 
+3) Assess the informed consent process; and 
+4) Monitor negative consequences of the research process. 
+
+In each area, we link to resources that we have found particularly useful, and provide examples of research that employs the practices that we recommend. 
+
+The overarching logic behind our suggestions is to make research ethics more transparent and empirical. Ethics should be part of the peer review process and researchers should be incentivized to develop increasingly robust practices in the protection of research participants and implementers. Practices to improve adherence to ethical principles is a type of research methodology. This Standards Discussion expands on a research letter that is published under open access use in Political Science Research and Methods ([Baron & Young 2021](https://urldefense.com/v3/__https://www.cambridge.org/core/journals/political-science-research-and-methods/article/from-principles-to-practice-methods-to-increase-the-transparency-of-research-ethics-in-violent-contexts/D5E7947FBA2720F377A48E36173312F8__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEuYvrnBQ$ )). 
+
+# 1. Documenting risk/benefit assessments
+
+Research involving human participants should not put participants at an unjustifiable risk of harm. The recent [ethics guidelines released by the American Political Science Association (APSA)](https://urldefense.com/v3/__https://www.apsanet.org/Portals/54/diversity*20and*20inclusion*20prgms/Ethics/Final_Principles*20with*20Guidance*20with*20intro.pdf?ver=2020-04-20-211740-153__;JSUlJSUlJQ!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEtdPKNog$ ) underline this principle, calling for researchers to “generally avoid harm when possible, minimize harm when avoidance is not possible, and not conduct research when harm is excessive.” Researchers also increasingly recognize that studies should not put collaborators at risk, particularly implementers and academics living in violent contexts. But in the social sciences, risk/benefit assessments are not always rigorous and are almost never replicable. Although we go to enormous lengths to validate other aspects of our methodologies, we often assess risks and benefits for IRBs or funders based on undocumented assumptions and general impressions. Risk/benefit assessments should be part of methodology discussions in articles or appendices for research in violent contexts where the stakes of ethical practices are high. 
+
+We know anecdotally that many researchers consider risks and benefits carefully. However, when these are not reported in research outputs there are no common norms around risk assessments. If scholars begin to expect that they need to document risk assessments in publications (and not just in IRB applications, which are almost never made public) it will create incentives for thorough and accurate assessments. For our research letter, we coded all articles published in the American Political Science Review, American Journal of Political Science, Journal of Politics, World Politics, Journal of Peace Research, and Journal of Conflict Resolution on violence with human participants from 2008 to 2019. Almost 75% of articles and their appendices (including almost 70% of recent articles published since 2015) didn’t mention anything related to risks and benefits. In other words, there is currently little transparency around risk/benefit assessments in this literature.
+
+### Relevant resources:
+
+* [MIT GOV/LAB’s Risk and Equity Matrix](https://urldefense.com/v3/__https://mitgovlab.org/resources/risk-and-equity-matrix/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEGdvjmBY$ ) - This workbook and guide is tailored to experimental research and aims to facilitate conversations around ethics between academics and practitioners. 
+* [Asiedu et al 2021](https://urldefense.com/v3/__https://www.pnas.org/content/118/29/e2024570118__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZE9aztofg$ ) - This PNAS article discusses several types of potential harms and benefits that should be considered in field experimental work and generally provides a suggested format for discussion of ethics in article appendices. 
+* [Cronin-Furman & Lake 2018](https://urldefense.com/v3/__https://www.cambridge.org/core/journals/ps-political-science-and-politics/article/ethics-abroad-fieldwork-in-fragile-and-violent-contexts/1D3AA6FCCB5C50F502A99C4B317048F4__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZECAJ4Xno$ ) - This article includes questions to ask before starting fieldwork in violent contexts (Table 1) and questions for reviewers and readers (Table 2), several of which relate to harms. 
+* [Raw data on ethics mentions in published articles and appendixes](https://urldefense.com/v3/__https://drive.google.com/file/d/13-J8jcHqCXkCdFew7STjJGMl7PWadURp/view?usp=sharing__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEI-rEeuY$ ) - We coded articles published from 2008 to 2019 for whether they mention six categories related to research ethics: Institutional Review Board (IRB) review, risk assessments, consent processes, harms observed, risk to research teams, and any other information related to ethics. This dataset may be useful to researchers who are looking for examples of ethics discussions in similar contexts, although most articles do not exhibit the level of transparency that we think is appropriate. 
+
+### Examples: 
+
+* [Young 2019](https://urldefense.com/v3/__http://www.laurenelyssayoung.com/wp-content/uploads/2016/08/Young_PsychPolRisk_Appendix.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEdXgArVg$ ) - The ethics appendix in this article (Appendix D) demonstrates our approach to documenting risk assessments in research outputs. Specifically, it identifies the risks that were considered (“re-traumatization” and retribution) and describes the data that was used to assess each risk. In this case, the data included the review of a context-based expert with deep experience in similar methods, the fact that similar research procedures had been used widely in other contexts, data from human rights monitors, and the results of small-scale pilots, among others.
+* [Arias et al 2020](https://urldefense.com/v3/__https://osf.io/prxzf/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEjRUFwv8$ ) - This pre-analysis plan for a Metaketa IV community policing field experiment in Colombia describes the expected risks and benefits to participation in a community policing study and what data the research team used to assess the likelihood and severity of the risks.
+
+
+# 2. Avoiding distress and negative psychological outcomes
+
+The risk of distress, lasting negative emotions, and other adverse psychological outcomes has rightfully become a major concern in violence research. “Re-traumatization” is often used as a shorthand by social scientists for various forms of distress and negative psychological outcomes. While researchers in trauma psychology have embedded questions designed to assess the incidence and severity of different harms in instruments used with trauma survivors, many open questions remain on the emotional and psychological risks of political science research. Two low-cost practices might help minimize the risks of negative psychological outcomes. 
+
+First, more consistently measuring experiences of distress during interviews and symptoms of negative psychological outcomes in the period following participation would enable researchers to better understand and avoid these risks. Separate questions on study experiences can be used to measure psychological or emotional benefits of the study (see point #4 below for a longer discussion of measuring harms and benefits, and links to meta-analyses from clinical psychology). The marginal cost of a few additional interview questions is small. These questions can be added to the end of existing interviews, in the “back-checking” that is common in large-scale surveys, or in interview debriefs. Having a more robust body of evidence on harms and benefits would enable us to identify the practices that are least likely to have negative psychological consequences and most likely to maximize research benefits. This evidence could be quickly generated if questions about psychological distress were regularly embedded in research protocols.
+
+A second approach to minimizing negative psychological outcomes involves providing psychosocial support. Psychosocial support can be provided throughout the course of a research project, not just in post-study referral systems. In our qualitative study in Mexico we worked with a local trauma specialist and certified counselor to train our interviewers on how to identify and prevent severe distress. This specialist helped interviewers learn techniques to cope with secondary trauma, and served as a counseling resource during and after the fieldwork. For a field experiment involving discussion groups as a treatment condition, we hired two counselors who had regularly worked with local survivors of violence to serve as discussion group moderators to ensure that our team had the skills and motivation to identify and avoid stimulating distress. These strategies are not necessarily expensive: trauma specialists can be offered an honorarium, and hiring counselors instead of standard research facilitators often doesn’t increase costs. In contexts where mental health professionals are very scarce, it may still be feasible to have a mental health professional with experience in the specific cultural context review the research protocol or offer remote support.
+
+### Relevant resources:
+
+* [Paluck 2009](https://urldefense.com/v3/__https://static1.squarespace.com/static/5186d08fe4b065e39b45b91e/t/51e3243ee4b046d0d008afbc/1373840446010/Paluck_methods_ethics_2009.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEFztL2cM$ ) - This book chapter includes a discussion of the type of physical and psychological harms to research team members that were relevant in two violent contexts (Rwanda and the DRC), and how different those considerations were across the two contexts. 
+* [2020 APSA ethics guidelines](https://urldefense.com/v3/__https://www.apsanet.org/Portals/54/diversity*20and*20inclusion*20prgms/Ethics/Final_Principles*20with*20Guidance*20with*20intro.pdf?ver=2020-04-20-211740-153__;JSUlJSUlJQ!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEtdPKNog$ ) - Principle 7 of this statement discusses harm and trauma. Importantly, it underlines that researchers should consider harms not only to research participants but also to research staff, and provides reporting guidelines for research in which the risk of emotional distress is elevated. This principle recognizes that not all research with people who have experienced trauma is traumatizing and can have benefits to participants, although [comments from EGAP members](https://urldefense.com/v3/__https://egap.org/wp-content/uploads/2020/05/egap-committee-memo-on-the-report-of-the-apsa-ad-hoc-committee-on-human-subjects-research.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZE6fia8Iw$ ) have pointed out that the guidelines overall underemphasize the benefits to research. 
+* [Krause 2021](https://urldefense.com/v3/__https://journals.sagepub.com/doi/full/10.1177/0022343320971021__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZElaxHGNE$ ) and [Wood 2006](https://urldefense.com/v3/__https://link.springer.com/article/10.1007*2Fs11133-006-9027-8__;JQ!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEshHxT88$ ) - These texts consider how principal investigators and field researchers may experience distress and secondary trauma, and mention strategies to prevent and mitigate negative experiences. 
+* [Bukavu Series 2020](https://urldefense.com/v3/__https://www.gicnetwork.be/silent-voices-blog-bukavu-series-eng/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEggFwifc$ ) - Research assistants in violent contexts rarely have the opportunity to express their own perspectives. This collection of blog posts by researchers from the eastern DRC includes some [critical](https://urldefense.com/v3/__https://www.gicnetwork.be/bukavu-series-waiting-for-the-morning-birds-researcher-trauma-in-insecure-environments/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEuyN789Q$ ) [discussion](https://urldefense.com/v3/__https://www.gicnetwork.be/lost-in-translation-managing-cultural-differences-in-the-face-of-risk-in-the-field/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEb_o95d4$ ) of the psychological toll of research on those conducting interviews. 
+
+### Examples:
+
+* [Paluck and Green 2009](https://urldefense.com/v3/__https://www.jstor.org/stable/pdf/27798529.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZE6F26jTM$ ) - Appendix 1 describes how psychosocial services were provided to participants during a field experiment in Rwanda. This article is notable both for the inclusion of a Rwandan psychologist in the research team, and for reporting how often psychosocial services were used by participants (see point 4 below). 
+* [Baron et al 2021b](https://urldefense.com/v3/__https://osf.io/5b2c3/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZE2Zxpt4o$ ) - The Ethical Considerations section in the main article and Appendix A describe our process of including a trauma specialist during interviewer training, throughout implementation, and for post-study debriefs for the field team in order to prevent participant distress and secondary trauma among staff.
+
+# 3. Assessing the informed consent process
+
+In most cases we know little about whether consent is actually informed. Consent scripts are typically short, and the subject of the interview is often described in one introductory paragraph. Researchers studying violence could do more to assess the adequacy of the consent process. The main concern in the informed consent process is that participants have enough information to make a personal decision that they would be satisfied with if they had complete information. To this end, psychologists researching trauma have asked questions about regret regarding participation. In our research we have simply asked participants if they are happy or unhappy that they consented at various points in the study process, and what they are happy or unhappy about. If the vast majority of participants say that they are happy with their decision, it is suggestive evidence that the consent process is adequate. This also allows us to pre-specify thresholds at which we would determine that the study is not adequately informing participants, at which point we would have stopped the study to modify the consent process or research protocol.
+
+Another approach to assess informed consent involves asking participants factual questions about the consent process. Can participants accurately identify the study sponsor (eg. the government, NGO, or independent researchers)? Do participants understand that they can stop the interview or skip questions? Do they remember identified risks? Do participants see their participation decision as one over which they have individual autonomy, or do they experience it as determined by a local elite or relative? Ultimately, assessing the quality of the informed consent process should be another area of methodological development.
+
+### Relevant resources:
+
+* [Newman et al 2001](https://urldefense.com/v3/__https://www.tandfonline.com/doi/pdf/10.1080/08989620108573983__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEo0anIgM$ ) - Trauma psychologists have developed and validated a set of measures that capture participant reactions to research. Several items measure elements related to consent including regret over participation. The Reactions to Research Participation Questionnaire (RRPQ) is available [here](https://urldefense.com/v3/__http://www.personal.utulsa.edu/*elana-newman/RRPQ-Rforpdf.pdf__;fg!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEgYV-UGY$ ).
+* [Humphreys 2015](https://urldefense.com/v3/__https://www.econstor.eu/bitstream/10419/126360/1/816866430.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEh7JMUyI$ ) - We are largely concerned with assessing the quality of consent in situations where researchers carry out a formal informed consent process. However, in some studies (including many field experiments with NGO partners) consent is not obtained for some or all components of the research. This UNU-WIDER article has a rich discussion of types of consent that might be possible even in studies without traditional consent processes. 
+
+### Examples: 
+
+* [Shesterinina 2016](https://urldefense.com/v3/__https://www.cambridge.org/core/journals/american-political-science-review/article/abs/collective-threat-framing-and-mobilization-in-civil-war/330C40CA3925F3DA0DDC93BFA40F5C32__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEVFnjAd4$ ) - The appendix to this article details the steps taken to ensure consent and reports insights gained from the informed consent procedure, eg. which groups of participants in fieldwork generally prefered oral consent versus written consent processes.
+* [Baron et al 2021a](https://urldefense.com/v3/__https://osf.io/3x7z8/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEXrMrXoE$ ) - In the ethics appendix of this recent field experiment involving day-long workshops that aim to depolarize US citizens, we report the proportion of participants that were satisfied or unsatisfied with their study participation and why, and include a copy of our informed consent document. 
+
+
+# 4. Monitoring negative consequences
+
+Actively monitoring for harms, particularly any forms of coercion or retribution, during and after research participation is the most important and challenging of the four practices we discuss.  Potential harms include negative psychological experiences, breaches of confidentiality, and retaliation for study participation against participants or research staff, among others. In violence research, extreme harm is possible and must be avoided. [Erikson Baaz & Utas (2019)](https://urldefense.com/v3/__https://www.diva-portal.org/smash/get/diva2:1357142/FULLTEXT02.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEvuP7vak$ ), for example, report a horrifying case of retributive violence against a research broker because of his participation in another research project in the Eastern DRC. In this case, the broker believed that the original research team was unaware of the harm he had experienced. Robust measurement of potential harms and management systems to quickly communicate information and adapt research protocols are obvious practices that could help researchers prevent potential harms. However, the rate of unintended consequences and how they were monitored is rarely reported in social science research outputs in a way that would allow other researchers to learn from them. 
+
+Researchers can monitor unintended consequences in follow-up surveys with participants or through debriefs with research staff. Researchers can ask participants in follow-up calls whether they experienced retaliation, emotional distress, or any other negative consequence due to participation. However, not all research designs permit this kind of follow-up. In particular, this type of follow up cannot be done for anonymous studies and thus may not always be worth the additional risk of collecting contact information. However, in cases where direct follow-up with participants is not possible, researchers can often rely on local contacts such as research assistants or community facilitators to check on major risks.
+
+If research has unintended consequences, transparency is the fastest way that violence researchers as a field can learn about them and prevent them in future studies. In addition, reporting monitoring practices and incidences of harms enables ethical practices to become a more robust part of the peer review process to create incentives for researchers to use appropriate methods in their research.
+
+### Relevant resources: 
+
+* [CONSORT Statement](https://urldefense.com/v3/__http://www.consort-statement.org/checklists/view/32--consort-2010/116-harms__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEzWP1pOE$ ) - The editors of many medical journals have endorsed a checklist on how RCTs should be described in articles. Item 19 addresses how harms and unintended consequences should be reported, and is further elaborated in this [2004 article](https://urldefense.com/v3/__https://www.acpjournals.org/doi/10.7326/0003-4819-141-10-200411160-00009?url_ver=Z39.88-2003&rfr_id=ori*3Arid*3Acrossref.org&rfr_dat=cr_pub**A0pubmed&__;JSUrKw!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZENv2dpek$ ). 
+* [McDermott and Hatemi 2020](https://urldefense.com/v3/__https://www.pnas.org/content/pnas/117/48/30014.full.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEZkybn18$ ) - The core argument in this important and provocative PNAS article is that field experiments have the potential to inflict harm at the societal level, and indeed that some have done so. 
+* [Newman and Kaloupek 2004](https://urldefense.com/v3/__https://onlinelibrary.wiley.com/doi/pdf/10.1023/B:JOTS.0000048951.02568.3a__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEXzqsD04$ ) - This early review on the risks and benefits of participation in trauma research largely in the US is a model of the kind of evidence accumulation that we should have in political science research on violence and has a list of harms and benefits that may be relevant in research on violence (Table 1), many of which are captured in the RRPQ discussed above. More recent meta-analyses of risk-benefit ratios in trauma research are reported in [Jaffe et al 2015](https://urldefense.com/v3/__https://www.sciencedirect.com/science/article/pii/S0272735815000744__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZE_tG3q3I$ ) and [McClinton et al 2015](https://urldefense.com/v3/__https://ajph.aphapublications.org/doi/pdfplus/10.2105/AJPH.2014.302293__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEW9nNuwE$ ). 
+
+### Examples:
+
+* [Baron et al 2021a](https://urldefense.com/v3/__https://osf.io/3x7z8/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEXrMrXoE$ ) -  In the ethics appendix of this depolarization field experiment we report the number and type of unintended consequences observed in the qualitative transcripts of the workshop-based treatment. 
+* [Blair et al 2021](https://urldefense.com/v3/__https://cpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/7/228/files/2020/12/abd3446_CombinedPDF_v1.pdf__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEUxafRf4$ ) - The meta-analysis working paper and appendix from the community policing Metaketa describe the systems they put in place to monitor harms during implementation and report observed harms. The main article describes how country teams deployed monitors to observe police behavior during the experiment, and defined “red lines” that would lead the researchers to stop collaborating with the police. Appendix C reports two situations (a surveyor with a criminal record and a person taking photos of the intervention) that were flagged as potential risks by this monitoring system and responded to before any harm occurred.
+
+# Conclusion 
+
+These suggestions enable researchers to monitor the risk/benefit balance of their studies and increase the transparency of decisions around ethics. In no way do these practices make ethical decisions in violent contexts easy. But they are easy to incorporate into a diverse range of research designs and report in research outputs so that we can learn how to improve the research experience for both research participants and staff. Just as other forms of research transparency have developed in recent years, these steps can help the field further develop ethics as an area of methodological innovation and research. 
+
+
+# References
+
+Arias, Eric, Rebecca Hanson, Dorothy Kronick, and Tara Slough. 2020. Pre-analysis Plan: The Construction of Trust in the State: Evidence from Police-Community Relations in Colombia, Pre-Analysis Plan. OSF. January 20. https://urldefense.com/v3/__https://osf.io/prxzf/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEjRUFwv8$ 
+
+Asiedu, Edward, Dean Karlan, Monica P. Lambon-Quayefio, and Christopher R. Udry. “A Call for Structured Ethics Appendices in Social Science Papers.” 2021. PNAS Perspective. https://urldefense.com/v3/__https://www.pnas.org/content/118/29/e2024570118__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZE9aztofg$   
+
+American Political Science Association. 4 Apr 2020. Principles and Guidance for Human Subjects Research. Technical report. https://urldefense.com/v3/__https://www.apsanet.org/Portals/54/diversity*20and*__;JSU!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZErTUpISk$  20inclusion%20prgms/Ethics/Final_Principles%20with%20Guidance%20with% 20intro.pdf?ver=2020-04-20-211740-153.
+
+Baron, Hannah, Robert A. Blair, Donghyun Danny Choi, Laura Gamboa, Jessica Gottlieb, Amanda L. Robinson, Steven Rosenzweig, Megan M. Turnbull, and Emily A. West. 2021. “Can Americans Depolarize? Assessing the Effects of Reciprocal Group Reflection on Partisan Polarization.” OSF Preprints. May 10. doi:10.31219/osf.io/3x7z8.
+
+Baron, Hannah, Lauren Young, Thomas Zeitzoff, Jorge O. Camarillo, and Omar G. Ponce. 2021. “Moral Reasoning and Support for Punitive Violence: A Multi-methods Analysis.” OSF Preprints. June 23. doi:10.31219/osf.io/5b2c3.
+
+Baron, Hannah and Lauren E Young. 2021. “From principles to practice: Methods for increasing
+the transparency of research ethics in violent contexts.” Political Science Research and Methods. https://urldefense.com/v3/__https://www.cambridge.org/core/journals/political-science-research-and-methods/article/from-principles-to-practice-methods-to-increase-the-transparency-of-research-ethics-in-violent-contexts/D5E7947FBA2720F377A48E36173312F8__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEuYvrnBQ$  
+
+Blair, Graeme, Jeremy Weinstein, Fotini Christia, Eric Arias, Emile Badran, Robert A. Blair, Ali
+Cheema, Ahsan Farooquiand, Thiemo Fetzer, Guy Grossman, Dotan A. Haim, Zulfiqar Hameed,
+Rebecca Hanson, Ali Hasanain, Dorothy Kronick, Benjamin S. Morse, Robert Muggah, Fatiq
+Nadeem, Lily Tsai, Matthew Nanes, Tara Slough, Nico Ravanilla, Jacob N. Shapiro, Barbara
+Silva, Pedro C. L. Souza and Anna M. Wilke. 2021. “Does Community Policing Build Trust
+in Police and Reduce Crime? Evidence from Six Coordinated Field Experiments in the Global
+South.” Working paper.
+
+The Bukavu Series, (Silent) Voices Blog. 2020. Governance in Conflict Network. https://urldefense.com/v3/__https://www.gicnetwork.be/silent-voices-blog-bukavu-series-eng/__;!!DZ3fjg!pmE9kTW-7jZYjvWkNC7UPkVBob9oQ6ERAzLlEhnMH_EGLWB04fyAIo0gQxZEggFwifc$ 
+
+Cronin-Furman, Kate and Milli Lake. 2018. “Ethics abroad: Fieldwork in fragile and violent contexts.” PS: Political Science & Politics 51(3):607–614.
+
+Eriksson Baaz, Maria and Mats Utas. 2019. “Exploring the backstage: Methodological and ethical issues surrounding the role of research brokers in insecure zones.” Civil Wars 21(2):157–178.
+
+Humphreys, Macartan. 2015. Reflections on the ethics of social experimentation, WIDER Working Paper, No. 2015/018, The United Nations University World Institute for Development Economics Research (UNU-WIDER), Helsinki.
+
+Humphreys, Macartan, Raul Sanchez De la Sierra and Peter Van der Windt. 2013. “Fishing, commitment, and communication: A proposal for comprehensive nonbinding research registration.” Political Analysis 21(1):1–20.
+
+Ioannidis, MD, John P.A., Stephen J.W. Evans, MSc, Peter C. Gøtzsche, MD, DrMedSci, Robert T. O'Neill, PhD, Douglas G. Altman, DSc, Kenneth Schulz, PhD, and David Moher, PhD. 2004. “Better Reporting of Harms in Randomized Trials: An Extension of the CONSORT Statement.” Annals of Internal Medicine. 141(10): 781-788.
+
+Jaffe, Anna E, David DiLillo, Lesa Hoffman, Michelle Haikalis and Rita E Dykstra. 2015. “Does it hurt to ask? A meta-analysis of participant reactions to trauma research.” Clinical Psychology
+Review 40:40–56.
+
+Krause, Jana. 2021. “The ethics of ethnographic methods in conflict zones.” Journal of Peace Research pp. 1–13.
+
+McClinton Appollis, Tracy and Lund, Crick and de Vries, Petrus J. and Mathews, Catherine. 2015. “Adolescents’ and Adults’ Experiences of Being Surveyed About Violence and Abuse: A Systematic Review of Harms, Benefits, and Regrets.” American Journal of Public 105 (2): e31-e45.
+
+McDermott, Rose and Peter K. Hatemi, “Ethics in field experimentation: A call to establish new standards to protect the public from unwanted manipulation and real harms.” Proceedings of the National Academy of Sciences Dec 2020, 117 (48) 30014-30021.
+ 
+MIT Governance Lab (MIT GOV/LAB). 2020. “Risk and Equity Matrix”. Version 1. Engaged Scholarship Tools. Massachusetts Institute of Technology Governance Lab.
+
+Newman, Elana, Traci Willard, Robert Sinclair and Danny Kaloupek. 2001. “Empirically supported ethical research practice: The costs and benefits of research from the participants’ view.” Accountability in Research 8(4):309–329.
+
+Newman, Elana, and Danny G. Kaloupek. 2004. “The risks and benefits of participating in trauma-focused research studies.” Journal of Traumatic Stress 17(5): 383-394.
+
+Nickerson, David, Melina Platas, Amanda Robinson, Cyrus Samii, and Tolga Sinmazdemir. 2021. “EGAP Committee Memo on the Report of the APSA AdHoc Committee on Human Subjects Research.” Evidence in Governance and Politics (EGAP).
+
+Open Science Collaboration. 2015.   “Estimating the reproducibility of psychological science.”
+Science 349(6251).
+
+Paluck, Elizabeth Levy and Donald P. Green. 2009. “Deference, Dissent, and Dispute Resolution: An Experimental Intervention Using Mass Media to Change Norms and Behavior in Rwanda.”  American Political Science Review 103(4): 622– 644.
+
+Shesterinina, Anastasia. 2016. “Collective Threat Framing and Mobilization in Civil War.” American Political Science Review, 110(3): 411-427.
+
+Simonsohn, Uri, Leif D Nelson and Joseph P Simmons. 2014. “P-curve: a key to the file-drawer.” Journal of Experimental Psychology: General 143(2): 534.
+
+Wood, Elisabeth Jean. 2006. “The ethical challenges of field research in conflict zones.” Qualitative Sociology 29(3): 373–386.
+
+
+
+
+
