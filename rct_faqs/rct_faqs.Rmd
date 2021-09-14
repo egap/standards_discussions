@@ -1,0 +1,251 @@
+---
+title: "I saw your RCT and I have some worries! FAQs"
+author: "Macartan Humphreys"
+date: "6 September 2021"
+output: 
+  html_document:
+    number_sections: true
+    toc: true
+abstract: "This document is written as a helper for practitioners and others reading analyses of RCTs. It's informal and skips over some nuance but I link to pointers to more technical treatments. I am happy to add to the list if more questions (or answers) come.<br><br>"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fabricatr)
+```
+
+
+# Estimation
+
+## Controls: You didn't control for \<this thing\>, should I be worried? {#nocontrols}
+
+**Probably not.** Generally in an RCT you don't *have* to control for anything in the following sense: in general, *your results are unbiased when you don't control for anything*.^[There are some exceptions: for instance if you randomize with different probabilities within blocks then you should control for those blocks: a great approach is estimate the effects within each block and then combine the estimates across blocks.] This is true whether or not treatment and control groups look similar. Intuitively the reason is that any third thing, gender say, is *ex ante* no more likely to be overrepresented (or underrepresented) in the treatment group than in the control group, thanks to randomization.  This is what trips people up: Unbiasedness is a statement about whether your estimates would be too high or too low *on average* if you repeated the experiment, not about whether you will be too high or too low in this instance.^[In practice you may have more men in treatment and more women in control, say. And it may well be that your estimate of effects partly reflects this, in the sense that you would have gotten different estimates if it were the other way around. But you are still *unbiased* for the simple reason that bias is a statement about whether you expect to be right on *average* and not a statement about whether you are right this time.] With that said, including controls can help make sure that you make smaller errors (again, on average) and so you might want to see controls included. 
+
+So: you generally don't need to be worried about things that are not controlled for if you are worried about bias. You might be worried if you think that unnecessarily imprecise estimation is making it too likely that the null hypothesis will be maintained when it should be rejected.
+
+
+## Should I be worried about omitted variable bias?
+
+**Probably not**.^[The rare cases in which you might worry are if the design used a randomization procedure --- such as assigning different units with different probabilities --- that calls for adjustment at the analysis stage.] See [here](#nocontrols). Even if you have imbalance (see [here](#imbalance)).
+
+
+## Controls: You controlled for \<this thing\>, should I be worried?
+
+**Maybe**. We sometimes control for background variables when looking at the difference between treatment and control outcomes. This is often done in order to produce more precise estimates. It's often a good thing to do but there can be two things to worry about:
+
+1. If a control is "post treatment" then including it can generate bias. You do not want to control for something that itself was affected by treatment. Say a medicine prevented death by reducing a fever. If you control for fever you might find that, conditional on fever, things look the same in the treatment and control groups and falsely conclude that the medicine had no effect. But of course its effect worked through the thing you just controlled for.
+
+2. While simple differences in means is guaranteed to be unbiased in an experiment, regression with adjustment is only guaranteed to be "consistent" (informally: works well when you have lots of data), and so you might worry when you have small samples. (See [Lin](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-7/issue-1/Agnostic-notes-on-regression-adjustments-to-experimental-data--Reexamining/10.1214/12-AOAS583.full) on this point and ways to address it.)
+3. Including controls can change the precision of estimates and sometimes estimates are "significant" when controls are used but not when they are not. In this case you *might* be worried that researchers have selected the controls *because* they made the result significant. This is a form of "[fishing](https://www.cambridge.org/core/journals/political-analysis/article/fishing-commitment-and-communication-a-proposal-for-comprehensive-nonbinding-research-registration/BD935F7843BF07F338774DAB66E74E3C)" and can lead to false inferences. If researchers have pre-specified their controls in a pre-analysis plan then this is probably not a cause for concern.
+
+## I saw you did not take any baseline measures!! Should I be worried?
+
+**No.** Baseline measures are often a good idea and they can let you implement a better random assignment and get tighter estimates. *But* they are not needed for inference from an RCT. The fact that there are no baseline measures should not lead you to read estimates of effects differently or interpret standard errors or confidence intervals differently, since lower precision will normally be captured by these numbers already. 
+
+There is confusion here because we intuitively think the goal is to estimate the difference between *changes* in the treatment and *changes* in the control group. But an amazing thing is that with randomization the differences in the average changes is *the same* as the difference in the average outcomes in treatment and control groups (in expectation).^[For a bit more intuition the average of the differences $(\overline{y}^T_{t=1} - \overline{y}^T_{t=0}) - (\overline{y}^C_{t=1} - \overline{y}^C_{t=0})$ can also be written as $(\overline{y}^T_{t=1} - \overline{y}^C_{t=1}) - (\overline{y}^T_{t=0} - \overline{y}^C_{t=0})$, where the first part is just the difference between endline outcomes and the second part is zero in expectation, thanks to randomization. A slightly deeper (and simpler) way to think about it is in terms of the estimand:  if we are interested in average changes we are interested, in the average, over individuals, of $(Y_i^{t=1}(1) - Y_i^{t=0}) - (Y_i^{t=1}(0) - Y_i^{t=0}) = Y_i^{t=1}(1) - (Y_i^{t=1}(0))$, where $Y_i^{t=1}(x)$ is a potential outcome---the value $Y$ takes in condition $x$---but $Y_i^{t=0}$ is a realized outcome.] So we are not talking about different quantities. A better way to think about baseline data is that it provides excellent controls, which you may or may not make use of (see [here](#controls) and [here](#nocontrols)).   
+
+## I see your study population is very heterogeneous. People differ in more ways than I can think of. Should I be worried?
+
+**Probably not.** Inference based on randomization does not depend on homogeneity (a lovely  reading on this is by [Paul Holland](https://www.tandfonline.com/doi/abs/10.1080/01621459.1986.10478354?casa_token=Aqqys61_2McAAAAA:-ZoP77E53whDGKsJlKIkdU3QeOTDZF1cti0FpEn9DBheFU6jcKUvbAjw4g5SnLg4aSH36J4IW-00HUA)). In particular there is no assumption that treatment works the same way for all people. Rather all we need (for unbiasedness) is that the average outcome in a random sample in any condition is the same (in expectation) as what the average outcome would be for the whole population in that condition. 
+
+
+## I am looking at your balance table and see that there are differences between the treatment and control group, should I be worried? {#imbalance}
+
+**Maybe.** If you randomize then treatment and control groups should look fairly similar on pretreatment variables -- gender, age, and so on. But of course in practice you can be certain they will look different. 
+
+* If they look *very very* different then you should wonder whether the randomization was in fact implemented correctly and investigate. See [this discussion](https://statmodeling.stat.columbia.edu/2021/08/22/does-the-table-1-fallacy-apply-if-it-is-table-s1-instead/).
+* In cases in which you know treatment was really randomized but differences are not too large (large in substantive terms) you should probably not worry.  Randomization is never going to generate perfect balance and in any case the "unbiasedness" that randomization brings does not depend on balance in specific instances.  Moreover rest assured that the statistics we use, such as $p$ values, are formed in the knowledge that there is not balance. 
+* In cases in which you know treatment was really randomized, but you see large  differences people sometimes say that randomization "failed." That's a bit misleading for the reasons given above (randomization delivers unbiasedness without guaranteeing balance). Even still, you might worry for the simple reason that you think the difference in outcomes is due to the imbalance not due to the treatment---especially if the imbalanced variable is likely to be strongly related to outcomes. There are strategies to address this but also dangers. See [here](https://www.degruyter.com/document/doi/10.1515/jci-2015-0018/html) for a correction strategy and [here](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1322143) to get a sense of the dangers. You would probably want to see a discussion of strategies used in the paper in this case.   
+
+## I can see that people in the control group could have been affected by the treatment, should I be worried?
+
+**Probably.** The standard analysis assumes that each subject reacts only to their own treatment status. If people react to other people's status then simple analyses can produce the wrong results. For intuition if everyone gets healthy because half the population got a treatment then you will estimate an effect of 0 when in truth there was a positive effect for everyone. 
+
+This is often called a problem of "spillovers" or, more technically, a violation of the "SUTVA" assumption. There are ways to address it and you should look to see whether people took account of this risk when doing analysis. [Here](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-11/issue-4/Estimating-average-causal-effects-under-general-interference-with-application-to/10.1214/16-AOAS1005.full) is a nice treatment of these issues.
+
+
+## I see you didn't *really* control the treatment: in fact people could choose whether to take up the treatment or not! Should I be worried? {#compliance}
+
+**Maybe not.** It's not uncommon that you can randomly "assign" a treatment but whether people actually take up the treatment is another matter. It could well be that only the people for whom the treatment works will actually take it up and others won't bother. This problem goes by the name of "noncompliance." Surprisingly this is less of a problem than it might seem.  There are a couple of ways that researchers likely respond to this:
+
+1. The "intention to treat" analysis is perhaps the most common. Researchers report on the effects of *assigning* a treatment, not the effects of taking up a treatment. This is often a policy relevant quantity. The fact that not everyone takes it up is not a problem here (rather it can be thought of as one of the things that dampen the  effects of assigning people to treatment).
+
+2. Another approach is to focus on the "complier average treatment effect" or the "local average treatment effect": the effect specifically for those that would take up the treatment if and only if they were assigned to treatment. For intuition you can estimate the effect of assignment on uptake and the effect of assignment on outcomes and then divide the latter by the former. For instance if giving a mask increases the probability of wearing a mask by 50 percentage points, and giving a mask reduced sickness by 10 percentage points. Then the estimated effect of wearing the mask (among those that wore a mask because you gave them a mask) is 20 percentage points; you can now think of the  estimated 10 points as an average of 20 (for the compliers) and 0 (for the non compliers). The approach requires a few assumptions but it is often viable (the seminal reference is [Angrist et al](https://www.tandfonline.com/doi/abs/10.1080/01621459.1996.10476902);  see also [here](https://declaredesign.org/blog/2019-02-05-instrumental-variables.html) for discussion of some assumptions and references).
+
+3. Another approach is to focus only on people that took up the condition that they were assigned to and ignore the data of "non compliers" (this is sometimes called "per-protocol"). You should worry if you see this because it can produce biased estimates. 
+
+## I see you didn't *really* control the measurement: in fact people could choose whether to get measured or not. Should I be worried? {#attrition}
+
+**Maybe.** Sometimes you end up getting measures for some people but not for other people and then people for whom you do not have measures end up dropping out of your sample. This can carry a risk of bias. 
+
+For intuition imagine a drug has positive effects for for half your treatment group and negative effects for the other half. The ones that experienced negative effects are reasonably upset and stop taking part in the study. So you only see good outcomes in the treatment group. This is called "attrition." If there is a lot of attrition you should check whether the authors have tried to address it. One approach is to try to demonstrate that the attrition was as good as random. Another is to show that attrition is unlikely large enough to change substantive conclusions. Possible responses are provided in Lin et al's [standard operating procedures](https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html#attrition). 
+
+
+## The outcome is binary but you are using a linear estimator! Should I be worried?
+
+**Probably not.** Linear models generally work well for experimental data. People argue on this point but the differences in estimates of the ATE from different approaches is often not large.
+
+In simple set ups with experimental data, linear (OLS) models return the difference in means estimate which is unbiased, no matter the data type.^[One word of caution: if the data is ordinal, say taking on values (0 = unhappy, 1 = happy, 2 = very happy) the ATE you estimate with OLS is the effect of the treatment on the scale you are using. If you decided that "very happy" should be coded as a 3 not a 2 you would get different answers.] With that said there are lots of different approaches that can be used to "model" different types of data generating processes, such as for binary data, ordinal data, or count data.  These can get at quantities that linear models do not aim for and that can be a reason to use them. But warning: they might not be [justified](
+https://projecteuclid.org/journals/statistical-science/volume-23/issue-2/Randomization-Does-Not-Justify-Logistic-Regression/10.1214/08-STS262.full)  by randomization and might not be  [worth it](https://declaredesign.org/blog/estimating-average-treatment-effects-with-ordered-probit-is-it-worth-it.html) if you are interested in the average treatment effect.^[For discussion of gains in the case with covariates see [Negi and Woolridge](https://www.tandfonline.com/doi/full/10.1080/07474938.2020.1824732) (Part 7).]
+
+## I see you only have 100 observations but I thought the arguments supporting inferences from RCTs required really large samples. Should I be worried? 
+
+**Probably not.** 
+
+* Sometimes people say that you need a large sample to be sure that estimates are not biased. But larger samples are about precision not bias. You can get unbiased estimates with only 1 unit in treatment and 1 in control.^[In fact using a [Horvitz Thompson](https://en.wikipedia.org/wiki/Horvitz%E2%80%93Thompson_estimator) estimator you can get unbiased estimates if you have only one observation in total!] 
+* People often invoke normal distributions and the like when describing procedures for calculating $p$ values. But you can calculate $p$ values and confidence intervals for "sharp" hypotheses^[e.g. the null that the treatment had no effect on all units.]  with very few units without making any assumptions about distributions, just using what you know about the [randomization](https://egap.org/resource/10-things-to-know-about-randomization-inference/). 
+* Sometimes you can run into problems calculating standard errors when there are too few clusters. Good choices of method for calculating standard errors can help a lot though even with small samples. See [here](https://academic.oup.com/ectj/article/21/2/114/5078969?login=true) and  [here](https://declaredesign.org/blog/how-misleading-are-clustered-ses-in-designs-with-few-clusters.html). 
+* Deaton & Cartwright raise the concern that the procedure for calculating $p$ values (from normal or t distributions) is not justified by randomization. See a response to this [here](https://declaredesign.org/blog/randomization-does-not-justify-t-tests.-how-worried-should-i-be.html) that suggests this is not likely to be major concern. 
+* If you want to you can *find out* how far you are from normality under the sharp null of no effects, given the data at hand. See illustration and code [here](https://macartan.github.io/i/notes/CLT_RCT.html).  
+
+
+_____
+
+# Inference
+
+## You wrote $p =.03$. What does that mean? {#pvalues}
+
+That is my guess at the probability we would see such a difference between treatment and control groups if in fact the treatment had no effect. If the $p$ value is low then I recommend that you stop thinking that there might not have been an effect. 
+
+## If the $p$ value is low does that mean that the estimated effect is reliable? {#low_p}
+
+Informally that is the conclusion we tend to draw but technically a very low $p$ value is not a statement about the effect you estimated but about the hypothesis of no effect. 
+
+Frequentist statistics are not designed to learn about the probability that one or other effect is correct but rather whether you should doubt one effect or another. For claims about the probability of a given effect see Bayesian inference.
+
+## What is the 95% confidence interval? {#ci}
+
+The confidence interval is a surprisingly obscure object. 
+
+**The wrong interpretation**: Informally people think of it as a describing a set of possible values such that there is a 95% probability that the truth lies within the confidence interval.  This is wrong because the construction of the confidence interval does not use any information about how likely one or other possible effect is. It uses information about how likely the data are *given* some effect or other. 
+
+**The technical feature that the confidence interval should have**: The confidence interval is a pair of functions producing upper and lower bounds (an interval) designed so that if we repeated the experiment, and recalculated the interval, there would be a 95% chance (or more) that the interval would include the true effect (it would "cover" the truth 95% of the time).^[It is often conceived of as a type of set valued estimate, but in practice it is used to provide a sense of uncertainty about a point estimate.] Now that's a pretty hard idea to make sense of.  And although it sounds a lot like it, what you *cannot* get from this definition is that the particular (confidence) interval we *reported* includes the true effect with 95% probability.^[Back in 1954 Savage complained about how routinely this has to be pointed out.] It either does include it or it does not. This definition doesn't help much in knowing what to do with the particular interval you have before you. (Though see [here](https://statmodeling.stat.columbia.edu/2013/01/14/how-do-you-think-about-the-values-in-a-confidence-interval/) for a lead)
+
+**An interpretation we can understand.** The interval can often be interpreted as *the set of values that you cannot reject (at the 5% level) given the data*.^[For intuition: Say your $p$ values are calculated correctly and so if the truth is 0 you will declare it to have a $p$ value below 0.05 just 5% of the time, then 95% of the time 0 will be within the set that you do not reject. Similarly for other null hypotheses that you might consider. [Greenland et al](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4877414/) highlight many more fallacies and clarify conditions under which this interpretation is valid.] Values outside the set are values that you *can* reject (at the 5% level). So one ("frequentist") approach is to reject all values outside the confidence interval and maintain all those inside.
+
+ 
+
+
+## Is every estimate inside a confidence interval equally likely? {#allequal}
+
+**No** (or maybe: no basis for the conclusion). 
+
+There is a sense that every number inside a confidence interval should be treated the same way: they are all values that you do not reject. 
+
+But that does not mean that they are all equally *likely*. For a statement about whether an estimate (or range of estimates) is *likely* you need some prior about whether they are likely. In other words you need information that the confidence interval doesn't use and doesn't provide. But see [here](#interpret).
+
+## Can I interpret the confidence interval as the range of values in which the true value probably lies? {#interpret}
+
+**At a stretch.** In practice people think of confidence intervals as if they were 95% Bayesian "[credibility intervals](https://en.wikipedia.org/wiki/Credible_interval)" (a range that holds the true value with 95% probability) and think of numbers in the middle as more likely. 
+
+Technically this is incorrect. The confidence interval does not use or provide information about the probability of one effect or another.  
+
+But even though the informal practice is not technically correct, it is not completely crazy either. In some applications the confidence interval can look a lot like the credibility interval.  For intuition: Imagine I thought that if the true effect were $\tau$ the estimates I would get from my experiment would be distributed normally, $t \sim N(\tau, 0.5)$. Say I estimate $t = 1$. Then my confidence interval would be something like [0.02, 1.98]. If I further supposed that ex ante I thought any value of $\tau$ equally likely, then my posterior belief would be proportional to the likelihood of observing 1 under each possible value of $\tau$. The most likely value would indeed be $\tau = 1$ and I would put about 95% probability mass on the possibilities in the credibility interval. I would put *much* lower weight on values near the edge of the confidence interval. (Bayesian plug: If you want to  give a Bayesian interpretation ask for a Bayesian analysis from the get go).
+
+```{r, echo = FALSE, include = FALSE}
+df <- fabricate(500, 
+          tau = seq(-4,4,length = N), 
+          L = dnorm(1, tau, .5),
+          posterior = L/sum(L))
+df %>% filter(tau >= .02 & tau <= 1.98) %>% pull(posterior) %>% sum
+
+
+# pnorm(1, 1.98, .5) 
+# pnorm(1, 0.02, .5) 
+```
+
+
+
+
+## I see the null is right at the edge of the confidence interval. Should I be worried? {#edge}
+
+**Maybe**. There is a sense in which if 0 is right at the edge of a confidence interval that your estimate was *almost* not significant. Or put differently, perhaps you can reject the null of 0  but you cannot reject the null of an absolutely tiny effect. This is the key thing: there is nothing truly sharp about these thresholds, there is no real difference being just inside or just outside a confidence interval in the same way as there is no real difference between $p = .051$ and $p = .049$. In particular, *tiny differences have almost no bearing on what effects are "likely"*. As [Gelman and Stern](http://www.stat.columbia.edu/~gelman/research/published/signif4.pdf) nicely put it: the difference between "significant" and "not significant" is not itself statistically significant.  See also [this](#allequal).  
+
+## I see that there is a significant effect for treatment A but not for treatment B, does that mean that treatment A is more effective than treatment B? {#heterogeneous}
+
+**No.** Weirdly it is possible that you can distinguish A's effect from 0 and not distinguish B's effect from 0, but still not be able to rule out that A and B have the same effect. It's even possible that you have a significant effect for A and not B but that your estimated effect is bigger for B than for A.
+
+For intuition, imagine you had a tight estimate for treatment A, with a mean of 1 and a confidence interval of [.9, 1.1]. For B your estimate is very noisy, with a mean of 2 but confidence interval of [-1, 5]. Here your estimate for B is so noisy that you cannot distinguish it from 0 or from 1. You would be wrong to infer that A is more effective than B. 
+
+If you are reading a paper and statements are made about the relative effects of treatments, look for the analyses that specifically back up these claims. 
+
+
+## I see that there is a significant effect for group A (for instance, men) but not for group B (women), does that mean that the treatment is more effective for men than for women?  {#heterogeneous2}
+
+**No.** See [here](heterogeneous2).
+
+If you are reading a paper and statements are made about the different effects of treatments for different groups, look for the analyses that specifically back up these claims. These often come in the form of an interaction term: $Treatment \times Gender$.
+
+
+## Someone said your study was "underpowered." Should I be worried? (And what does that mean?) {#underpowered}
+
+**Maybe.** A study is underpowered if (ex ante) it is not very likely to reject a null of no effect even when there is a real effect. The basic problem is that the design is not capable of generating sufficiently precise estimates to be able to distinguish real effects from noise. The problem with that is that you might (falsely) conclude that there is no effect even though there is one. Having more observations generally improves power and underpowered studies are often small. But other things matter also, such as how randomization was done, how measurement was done, and what [estimators](https://declaredesign.org/blog/improve-power-using-your-answer-strategy-not-just-your-data-strategy.html) are used.
+
+If you are worried about power it can be useful to look at confidence intervals. An underpowered study has big confidence intervals. Before discounting an intervention on the grounds that you cannot reject the null of no effect you might also ask whether you can reject the possibility that there are very large effects. If you cannot reject either large or small effects you might conclude that there is not too much to learn here.
+
+You might think that low power is not a problem if in fact you get a significant result. But there's a subtlety here. *Conditional* on being significant, an underpowered estimate if more likely than not to be an overestimate. If someone brings your attention to an underpowered published study with significant results and huge effects it's probably too good to be true.  
+ (Gelman calls this the [significance filter](https://statmodeling.stat.columbia.edu/2011/09/10/the-statistical-significance-filter/); we discuss implications for publishing [here](https://declaredesign.org/blog/a-journal-of-null-results-is-a-flawed-fix-for-a-significance-filter.html))
+
+
+## If there is no significant treatment effect, does that mean that there is no effect? {#nullnull}
+
+**No.** People sometime say: "absence of evidence is not evidence of absence" which captures the idea that in general, null results should be interpreted as absence of evidence. A null results just means that data like this could have been produced easily enough by a process in which there is no true effect.^[At the same time, any Bayesian would likely argue that a null result suggests that there may be nothing going on. Expressing the idea properly requires a Bayesian set up however. See [here](#interpret).] The problem is not helped by the fact that unfortunately researchers often say "we found that this treatment didn't work" when really they mean "we weren't able to rule out the possibility that there is no effect."
+
+Better in this case to look at the confidence interval to see whether they are tight. If you have a null result with tight confidence intervals that means that large effects are rejected---bigger effects sizes, outside the confidence interval, are not likely to have produced data like this.
+
+
+
+## If there is no significant effect does that mean that the intervention should not be implemented? {#nullno}
+
+**No.** A lot of the statistics commonly used for analyzing RCTs are for figuring out if the data support some or other hypothesis. But the decision to take an action should depend on what you believe the costs and benefits are and knowing that an estimate is "significant" does not help much with that decision. 
+
+As a concrete example consider a version of the problem described  [here](#intepret) and imagine that if the true effect were $\tau_j$ the estimates I would get from my experiment would be distributed normally, $t \sim N(\tau_j, 1)$. Say I estimate $t = 1$. Then my confidence interval would be something like [-1, 3]. So I would have a null result, with an estimate that is quite far from significant. Say though that my benefit from intervening was $\tau$ but my costs was .5. Then my *expected* net benefit from intervening would be 1-.5 = .5. If my benefit were $\tau^2$ then my expected net benefit would be 2 - .5 = 1.5.
+
+```{r, echo = FALSE, include = FALSE}
+df <- fabricate(9, 
+          tau = seq(-3,5,length = N), 
+          L = dnorm(1, tau, 1),
+          posterior = L/sum(L))
+sum(df$posterior * df$tau)
+sum(df$posterior * df$tau^2)
+```
+
+
+The bigger point is that when using data to make inferences you should not focus on significance alone, or on the estimate of effect sizes alone, but try to think through the implications given your beliefs over a range of  plausible effects. 
+
+# Stepping back
+
+## This experiment does not look ethical to me, should I be worried? {#rct_ethics}
+
+**Maybe**. There is increasing attention to the importance of attending to ethics in experiments (and other research). RCTs invoke specific ethical concerns insofar as they, typically, manipulate people in order for other people to learn things. With that said they are often implemented specifically to learn things that could be beneficial to participants and to others and in ways that are equitable and avoid harm to participants. There is however variation in the extent to which they involve proper informed consent---informed consent is common for measurement but less common for social science interventions.  
+
+If you have concerns about the ethics reach out to the authors. There may be features of the intervention that address your questions that are not in the paper. It's useful to draw authors' attention to these issues because such features *should* be in the paper.
+
+* [Karlan and Udry](https://www.poverty-action.org/blog/call-structured-ethics-appendices-social-science-papers) have proposed including "Structured Ethics Appendices" in papers. 
+* [EGAP](https://egap.org/wp-content/uploads/2020/05/egap-research-principles.pdf) has a set of research principles focused on collaborations in a particular
+* For political scientists, [APSA](https://connect.apsanet.org/hsr/principles-and-guidance/) has principles and guidance to help navigate some of the issues.
+
+## How can you justify withholding a beneficial treatment from a control group? 
+
+There have been cases where beneficial treatments have been withheld from control groups for research purposes which raises obvious ethical concerns. If you are worried about this, first find out if that is what actually happened. A number of the items in [Karlan and Udry's](https://www.poverty-action.org/blog/call-structured-ethics-appendices-social-science-papers) framework help assess this point but the information is still often missing in writeups.
+
+Sometimes what looks like straight up withholding benefits has some or more of the following features:
+
+* Treatments were not withheld but differentially encouraged in the treatment group. For instance an RCT encourages a group to wear masks but does nothing to prevent control groups from wearing masks. (See [here on compliance](#compliance))  
+* The number of beneficiaries was set independent of the RCT and the RCT was the mechanisms to determine allocation, perhaps by expanding the eligible pool.
+* The RCT involved differences in timing for when benefits were delivered, not a change in who benefited. Sometimes this is done in settings where benefits are naturally rolled out over time anyhow.
+* The benefits were not known before the study. In some cases if treatments are found to be beneficial they are then extended to control groups. 
+
+## Did you really need an RCT to show this? I am worried this is a bad use of resources.
+
+A main reason to use RCTs is that different types of "selection bias" can result in very misleading inferences when we look at patterns as they occur naturally in the world. For instance development programs might operate in easy to access areas. When we compare places with and without programs we might think that the program is very effective because many other good things are going on in easy to access areas and so we mistakenly think that the program is effective when it is not. Similarly we might find no differences between areas in which a program is in operation and those in which it is not and wrongly conclude that there is no effect---rather the program chose disadvantaged areas to work in and so the lack of a difference is actually evidence of an effect. The random assignment to treatment provides confidence that none of these selection biases are producing faulty inferences.
+
+If you are worried about whether an RCT was justified it can be helpful to (i) think through what are the types of biases in this case that might undermine inferences from observational comparisons (or: are tehre reasons to think that you might be wrong about what you think an intervention does) (ii) compare the costs of the RCT to the costs and benefits of the intervention---a million dollar RCT that gives guidance on a billion dollar intervention can be money well spent (iii) try to think back to what you thought before seeing the result of the RCT and benchmark learning against that, likely either your beliefs about effect sizes changed *or* your confidence in your beliefs, or both (iv) try to think through how you might have changed your beliefs had the RCT produced outcomes different to what it did.   
+
+
+
+
+# Notes

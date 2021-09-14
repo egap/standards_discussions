@@ -1,6 +1,4 @@
 ---
-title: "Learning and Experiments"
-author: 'Tara Slough'
 output:
   html_document:
     toc: true
@@ -33,7 +31,6 @@ get_post <- function(prior_mu = 1,
   post_sigma = sqrt(1/((1/prior_sigma^2) + (n/data_sigma^2)))
   return(c(post_mu, post_sigma))
 }
-
 library(dplyr)
 library(ggplot2)
 p1 <- data.frame(x = seq(-4, 4, by = .01)) %>%
@@ -45,7 +42,6 @@ p1 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_x_continuous(expression(theta)) +
   scale_y_continuous("Density") +
   ggtitle(expression(paste("Prior ~ N(1, 1), ", SE[ATE], "= 1")))
-
 p2 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 1, sd = 1)) +
@@ -55,8 +51,6 @@ p2 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_x_continuous(expression(theta)) +
   scale_y_continuous("Density") +
   ggtitle(expression(paste("Prior ~ N(1, 1), ", SE[ATE], "= 0.25")))
-
-
 p3 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
@@ -66,7 +60,6 @@ p3 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_x_continuous(expression(theta)) +
   scale_y_continuous("Density")+
   ggtitle(expression(paste("Prior ~ N(0, 1), ", SE[ATE], "= 1")))
-
 p4 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
@@ -76,7 +69,6 @@ p4 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_x_continuous(expression(theta)) +
   scale_y_continuous("Density") +
   ggtitle(expression(paste("Prior ~ N(0, 1), ", SE[ATE], "= 0.25")))
-
 library(gridExtra)
 grid.arrange(p1, p2, p3, p4)
 ```
@@ -104,8 +96,6 @@ mu = 1
 sigma = 1
 c = 1.96
 n = 10
-
-
 posterior <- function(theta,
                       	mu = 1,
                       	sigma = 1,
@@ -118,7 +108,6 @@ posterior <- function(theta,
           	pnorm((-sqrt(n) * mu - c)/sqrt(1 + n * sigma^2))
  	post = (1/ sigma * dnorm((theta - mu)/sigma) *
         	(1 - pnorm(sqrt(n) * theta - c) - pnorm(-sqrt(n) * theta - c)))/(1 - pr_rej)
-
   }
   if(null & tails == 1){
 	c = 1.64
@@ -131,20 +120,17 @@ posterior <- function(theta,
 	c = 1.96
 	pr_rej = pnorm((sqrt(n) * mu - c)/sqrt(1 + n * sigma^2)) +
 	pnorm((-sqrt(n) * mu - c)/sqrt(1 + n * sigma^2))
-
 	post = (1/ sigma * dnorm((theta - mu)/sigma) *
         	(pnorm(sqrt(n) * theta - c) + pnorm(-sqrt(n) * theta - c)))/(pr_rej)
   }
   if(!null & tails == 1){
 	c = 1.64
  	pr_rej = pnorm((sqrt(n) * mu - c)/sqrt(1 + n * sigma^2))
-
 	post = (1/ sigma * dnorm((theta - mu)/sigma) *
         	(pnorm(sqrt(n) * theta - c)))/(pr_rej)
   }
   return(post)
 }
-
 p1 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 1, sd = 1)) +
@@ -154,8 +140,6 @@ p1 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_x_continuous(expression(theta)) +
   scale_y_continuous("Density") +
   ggtitle("Prior ~ N(1, 1), Two-tailed test")
-
-
 p2 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 1, sd = 1)) +
@@ -165,8 +149,6 @@ p2 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_x_continuous(expression(theta)) +
   scale_y_continuous("Density") +
   ggtitle("Prior ~ N(1, 1), One-tailed test")
-
-
 p3 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
@@ -183,8 +165,6 @@ p3 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_y_continuous("Density") +
   theme(legend.position = "bottom") +
   ggtitle("Prior ~ N(0, 1), Two-tailed test")
-
-
 p4 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   ggplot(aes(x = x)) +
   stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
@@ -201,7 +181,6 @@ p4 <- data.frame(x = seq(-4, 4, by = .01)) %>%
   scale_y_continuous("Density") +
   theme(legend.position = "bottom") +
   ggtitle("Prior ~ N(0, 1), One-tailed test")
-
 library(gridExtra)
 grid.arrange(p1, p2, p3, p4)
 ```
@@ -244,4 +223,3 @@ These considerations complement ethical considerations premised on the costs of 
 ## Reference
 
 Abadie, Alberto. 2020. "Statistical Nonsignificance in Empirical Economics." *American Economic Review: Insights*, 2 (2): 193-208.
-
