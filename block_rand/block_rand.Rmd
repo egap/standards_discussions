@@ -309,7 +309,7 @@ you've taught me today."
 
 "It was some work, but the simulations were not so difficult to execute. We can
 put all of the code up on [our github
-repository](https://github.com/egap/standards_discussions/block_rand) so you
+repository](https://github.com/egap/standards_discussions/tree/main/block_rand) so you
 and your other customers can use it." The fourth experiment opens a computer
 and starts to type.
 
