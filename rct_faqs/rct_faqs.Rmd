@@ -15,7 +15,7 @@ library(kableExtra)
 library(fabricatr)
 ```
 
-<!-- I saw your RCT and I have some worries! FAQs" -->
+<!-- Frequent Worries about RCTs: Questions and Answers -->
 <!-- Author: Macartan Humphreys -->
 
 # Estimation
