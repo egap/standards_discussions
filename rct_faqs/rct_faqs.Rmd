@@ -41,7 +41,7 @@ So: you generally don't need to be worried about things that are not controlled 
 2. While simple differences in means is guaranteed to be unbiased in an experiment, regression with adjustment is only guaranteed to be "consistent" (informally: works well when you have lots of data), and so you might worry when you have small samples. (See [Lin](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-7/issue-1/Agnostic-notes-on-regression-adjustments-to-experimental-data--Reexamining/10.1214/12-AOAS583.full) on this point and ways to address it.)
 3. Including controls can change the precision of estimates and sometimes test of hypotheses about estimates are "significant" when controls are used but not when they are not. In this case you *might* be worried that researchers have selected the controls *because* they made the result significant. This is a form of "[fishing](https://www.cambridge.org/core/journals/political-analysis/article/fishing-commitment-and-communication-a-proposal-for-comprehensive-nonbinding-research-registration/BD935F7843BF07F338774DAB66E74E3C)" and can lead to false inferences. If researchers have pre-specified their controls in a pre-analysis plan then this is probably not a cause for concern.
 
-TODO 10 THINGS GUIDE
+For more on when to include covariates in your analysis (or when not to), see [10 Things to Know About Covariate Adjustment](https://egap.org/resource/10-things-to-know-about-covariate-adjustment/).
 
 ## I saw you did not take any baseline measures!! Should I be worried?
 
@@ -51,7 +51,7 @@ There is confusion here because we intuitively think the goal is to estimate the
 
 ## I see your study population is very heterogeneous. People differ in more ways than I can think of. Should I be worried?
 
-**Probably not.** Inference based on randomization does not depend on homogeneity (a lovely  reading on this is by [Paul Holland](https://www.tandfonline.com/doi/abs/10.1080/01621459.1986.10478354?casa_token=Aqqys61_2McAAAAA:-ZoP77E53whDGKsJlKIkdU3QeOTDZF1cti0FpEn9DBheFU6jcKUvbAjw4g5SnLg4aSH36J4IW-00HUA)). In particular there is no assumption that treatment works the same way for all people. Rather all we need (for unbiasedness) is that the average outcome in a random sample in any condition is the same (in expectation) as what the average outcome would be for the whole population in that condition.
+**Probably not.** Inference based on randomization does not depend on homogeneity (a lovely reading on this is by [Paul Holland](https://www.tandfonline.com/doi/abs/10.1080/01621459.1986.10478354?casa_token=Aqqys61_2McAAAAA:-ZoP77E53whDGKsJlKIkdU3QeOTDZF1cti0FpEn9DBheFU6jcKUvbAjw4g5SnLg4aSH36J4IW-00HUA)). In particular there is no assumption that treatment works the same way for all people. Rather all we need (for unbiasedness) is that the average outcome in a random sample in any condition is the same (in expectation) as what the average outcome would be for the whole population in that condition.
 
 
 ## I am looking at your balance table and see that there are differences between the treatment and control group, should I be worried? {#imbalance}
@@ -84,9 +84,7 @@ This is often called a problem of "spillovers" or, more technically, a violation
 
 **Maybe.** Sometimes you end up getting measures for some people but not for other people and then people for whom you do not have measures end up dropping out of your sample. This can carry a risk of bias.
 
-For intuition imagine a drug has positive effects for for half your treatment group and negative effects for the other half. The ones that experienced negative effects are reasonably upset and stop taking part in the study. So you only see good outcomes in the treatment group. This is called "attrition." If there is a lot of attrition you should check whether the authors have tried to address it. One approach is to try to demonstrate that the attrition was as good as random. Another is to show that attrition is unlikely large enough to change substantive conclusions. Possible responses are provided in Lin et al's [standard operating procedures](https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html#attrition).
-
-TODO 10 THINGS GUIDE
+For intuition imagine a drug has positive effects for for half your treatment group and negative effects for the other half. The ones that experienced negative effects are reasonably upset and stop taking part in the study. So you only see good outcomes in the treatment group. This is called "attrition." If there is a lot of attrition you should check whether the authors have tried to address it. One approach is to try to demonstrate that the attrition was as good as random. Another is to show that attrition is unlikely large enough to change substantive conclusions. Possible responses are provided in Lin et al.'s [standard operating procedures](https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.html#attrition).
 
 
 ## The outcome is binary but you are using a linear estimator! Should I be worried?
@@ -142,9 +140,7 @@ There is a sense that every number inside a confidence interval should be treate
 
 But that does not mean that they are all equally *likely*. For a statement about whether an estimate (or range of estimates) is *likely* you need some prior about whether they are likely. In other words you need information that the confidence interval doesn't use and doesn't provide. But see [here](#interpret).
 
-Also, the $p$-values for values near the edges of the 95% CI will be near .05
-and near the center of that interval the (two-sided) $p$-values will be higher
-than .05.
+Also, the $p$-values for values near the edges of the 95% CI will be near .05 and near the center of that interval the (two-sided) $p$-values will be higher than .05.
 
 ## Can I interpret the confidence interval as the range of values in which the true value probably lies? {#interpret}
 
@@ -165,8 +161,6 @@ df %>% filter(tau >= .02 & tau <= 1.98) %>% pull(posterior) %>% sum
 # pnorm(1, 1.98, .5)
 # pnorm(1, 0.02, .5)
 ```
-
-
 
 
 ## I see the null is right at the edge of the confidence interval. Should I be worried? {#edge}
@@ -198,6 +192,8 @@ If you are worried about power it can be useful to look at confidence intervals.
 You might think that low power is not a problem if in fact you get a significant result. But there's a subtlety here. *Conditional* on being significant, an underpowered estimate is more likely than not to be an overestimate. If someone brings your attention to an underpowered published study with significant results and huge effects it's probably too good to be true.
  (Gelman calls this the [significance filter](https://statmodeling.stat.columbia.edu/2011/09/10/the-statistical-significance-filter/); we discuss implications for publishing [here](https://declaredesign.org/blog/a-journal-of-null-results-is-a-flawed-fix-for-a-significance-filter.html))
 
+For more on power, see [10 Things to Know About Statistical Power](https://egap.org/resource/10-things-to-know-about-statistical-power/).
+
 
 ## If there is no significant treatment effect, does that mean that there is no effect? {#nullnull}
 
@@ -205,13 +201,14 @@ You might think that low power is not a problem if in fact you get a significant
 
 Better in this case to look at the confidence interval to see whether they are tight. If you have a null result with tight confidence intervals that means that large effects are rejected---bigger effects sizes, outside the confidence interval, are not likely to have produced data like this.
 
-TODO 10 THINGS GUIDE 
+For more on interpreting null results, see [10 Things Your Null Result Might Mean](https://egap.org/resource/10-things-your-null-result-might-mean/).
+
 
 ## If there is no significant effect does that mean that the intervention should not be implemented? {#nullno}
 
 **No.** A lot of the statistics commonly used for analyzing RCTs are for figuring out if the data support some or other hypothesis. But the decision to take an action should depend on what you believe the costs and benefits are and knowing that an estimate is "significant" does not help much with that decision.
 
-As a concrete example consider a version of the problem described  [here](#intepret) and imagine that if the true effect were $\tau_j$ the estimates I would get from my experiment would be distributed normally if I were to repeat my experiment many times, $t \sim N(\tau_j, 1)$. Say I estimate $t = 1$. Then my confidence interval would be something like [-1, 3]. So I would have a null result, with an estimate that is quite far from significant. Say though that my benefit from intervening was $\tau$ but my cost was .5. Then my *expected* net benefit from intervening would be 1-.5 = .5. If my benefit were $\tau^2$ then my expected net benefit would be 2 - .5 = 1.5.
+As a concrete example consider a version of the problem described [here](#intepret) and imagine that if the true effect were $\tau_j$ the estimates I would get from my experiment would be distributed normally if I were to repeat my experiment many times, $t \sim N(\tau_j, 1)$. Say I estimate $t = 1$. Then my confidence interval would be something like [-1, 3]. So I would have a null result, with an estimate that is quite far from significant. Say though that my benefit from intervening was $\tau$ but my cost was .5. Then my *expected* net benefit from intervening would be 1-.5 = .5. If my benefit were $\tau^2$ then my expected net benefit would be 2 - .5 = 1.5.
 
 ```{r, echo = FALSE, include = FALSE}
 df <- fabricate(9,
@@ -236,8 +233,8 @@ If you have concerns about the ethics reach out to the authors. There may be fea
 * [Karlan and Udry](https://www.poverty-action.org/blog/call-structured-ethics-appendices-social-science-papers) have proposed including "Structured Ethics Appendices" in papers.
 * [EGAP](https://egap.org/wp-content/uploads/2020/05/egap-research-principles.pdf) has a set of research principles focused on collaborations in a particular
 * For political scientists, [APSA](https://connect.apsanet.org/hsr/principles-and-guidance/) has principles and guidance to help navigate some of the issues.
+* For more on the specific ethical considerations those working in conflict areas should follow, see [Transparency in research ethics: Methods to monitor principles and practice in violent contexts](https://egap.org/resource/standards-discussion-ethics-violent-contexts/).
 
-TODO NEW ESSAY EGAP
 
 ## How can you justify withholding a beneficial treatment from a control group?
 
