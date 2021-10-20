@@ -4,7 +4,6 @@ output:
     number_sections: true
     toc: true
     theme: journal
-abstract: "This document is written as a helper for practitioners and others reading analyses of RCTs. It's informal and skips over some nuance, but links to pointers to more technical treatments. This is a living document and will be updated as more questions (or answers) come.<br><br>"
 ---
 
 ```{r setup, include=FALSE}
@@ -17,6 +16,10 @@ library(fabricatr)
 
 <!-- Frequent Worries about RCTs: Questions and Answers -->
 <!-- Author: Macartan Humphreys -->
+
+# Introduction
+
+This document is written as a helper for practitioners and others reading analyses of randomized controlled trials (RCTs). It's informal and skips over some nuance, but links to pointers to more technical treatments. This is a living document and will be updated as more questions (or answers) come.
 
 # Estimation
 
@@ -156,8 +159,6 @@ df <- fabricate(500,
           L = dnorm(1, tau, .5),
           posterior = L/sum(L))
 df %>% filter(tau >= .02 & tau <= 1.98) %>% pull(posterior) %>% sum
-
-
 # pnorm(1, 1.98, .5)
 # pnorm(1, 0.02, .5)
 ```
@@ -257,3 +258,4 @@ If you are worried about whether an RCT was justified it can be helpful to (i) t
 
 
 # Notes
+
