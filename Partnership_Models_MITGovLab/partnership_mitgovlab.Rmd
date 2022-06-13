@@ -1,0 +1,21 @@
+---
+output: 
+  html_document:
+    toc: true
+    theme: journal
+---
+
+<!-- title: "Academic/Practitioner Partnership Models: MIT Governance Lab" -->
+<!-- author: 'Authors: Lula Chen, Lily Tsai, Alisa Zomer' -->
+
+*Partnerships between academic researchers and implementing organizations produce opportunities for both parties to advance shared interests, learn about their own areas of expertise, and add to the growing network of individuals and institutions dedicated to using rigorous research to inform program design. For researchers who conduct field experiments, research partnerships can enable randomized experiments in  real world settings and can thus speed scientific learning while enhancing public welfare  For implementing organizations, such partnerships can speed learning about organizational objectives both by taking advantage of the latest in research methodology and academic literature on a topic and adding a new perspective to a team, but also because academic researchers’ incentives involve peer reviewed publication and fairly rigorous transparency practices –- all of which add up to evaluations and research designs, which, in principle should provide more actionable information to a NGO or government.*
+
+*There is no set way to identify, enter into, and conduct a research partnership. There are, however, lessons learned from previous partnerships. These lessons have led some organizations to standardize the process through which they engage academic researchers as partners. The following summary is part of an ongoing series on Academic/Practitioner Partnership Models. In each entry, we lay out the structure of one organization’s model for engaging in research partnerships, discuss the choices made in devising that model alongside the reasons for doing so, and outline the lessons learned from the implementation of the model.*
+
+*If your institution or partner organization uses a different model for research partnerships, or wishes to add to the conversation, please contact us at [admin@egap.org](mailto:admin@egap.org) so we can learn more about that model and add it to the series.*
+
+# Model: MIT Governance Lab Engaged Scholarship Model
+
+The Massachusetts Institute of Technology Governance Lab (MIT GOV/LAB) is a research group and innovation incubator that aims to change practices around corruption, government accountability, and citizen voice. One part of our mission is to **produce and promote engaged scholarship**, which we define as **rigorous research that is co-created by practitioner organizations and grounded in the field**, thus increasing the probability that practitioners will make use of the insights and evidence arising from the collaboration. Because the rigor of research alone is not enough to ensure uptake of findings, our engaged scholarship model is based on values of equitable exchange and respect between practitioners and academics.
+
+We focus on sustained, multi-year, and multi-project partnerships between academics and practitioners working iteratively to identify questions that are important to answer and solutions that are important to test. Our approach produces research and evidence that help practitioner organizations make operational decisions as well as provide general knowledge to the larger field. We are committed to fieldwork, and draw on theories and methodologies from a variety of academic disciplines and subfields. See below for a working illustration of our model.
