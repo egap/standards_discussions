@@ -14,7 +14,7 @@ output:
 
 *If your institution or partner organization uses a different model for research partnerships, or wishes to add to the conversation, please contact us at [admin@egap.org](mailto:admin@egap.org) so we can learn more about that model and add it to the series.*
 
-# Model I: USAID Center of Excellence for Democracy, Human Rights, and Governance Model
+# Model: USAID Center of Excellence for Democracy, Human Rights, and Governance
 
 In 2012, USAID transformed its Democracy and Governance Office into a Center of Excellence for Democracy, Human Rights, and Governance. This new Center aimed to add to the evidence base for what works and what does not in Democracy, Human Rights, and Governance (DRG) development programming via rigorous testing of USAID DRG programs. For reasons of accountability, but also to provide a public good to the global DRG community as the largest donor of Democracy and Governance assistance, USAID embarked on a program of designing, fielding, and public reporting of RCTs testing some of the theories of change (causal mechanisms) around which the development community had the most uncertainty.
 
